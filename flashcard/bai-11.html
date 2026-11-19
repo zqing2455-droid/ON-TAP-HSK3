@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="fc-key" content="flashcard-hsk3-bai11">
+<meta name="fc-han" content="看来我没办法解决这个问题">
+<meta name="fc-total" content="28">
+<meta name="fc-sub" content="27 từ mới + 1 danh từ riêng">
+<meta name="fc-lesson" content="11">
+<title>Flashcard từ vựng · HSK3 Bài 11</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@600;700;900&family=Quicksand:wght@500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F6F4EC; --ink:#26221A; --soft:#7A6E64;
+  --accent:#E3963B; --rose:#C2697A; --green:#4F7E62; --blue:#4A7398;
+  --card:#FFFDF7; --line:#E4DCCB;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  background:var(--paper); color:var(--ink);
+  font-family:'Quicksand',sans-serif; font-weight:600;
+  padding:18px 14px 80px; line-height:1.5;
+}
+.wrap{max-width:720px;margin:0 auto}
+.backlink{font-size:.85rem;margin-bottom:10px}
+.backlink a{color:var(--soft);text-decoration:none;font-weight:700}
+.backlink a:hover{color:var(--ink)}
+.han{font-family:'Noto Serif SC',serif}
+.py{font-family:'Space Mono',monospace}
+
+/* ---------- đầu trang ---------- */
+header{text-align:center;margin-bottom:14px}
+header .kicker{font-size:.78rem;letter-spacing:2px;text-transform:uppercase;color:var(--accent);font-weight:800}
+header h1{font-size:1.45rem;font-weight:800;letter-spacing:-.3px;margin-top:4px}
+header h1 .han{color:var(--rose)}
+header p{color:var(--soft);font-size:.9rem;margin-top:4px}
+
+/* ---------- thanh điều khiển ---------- */
+.bar{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:14px 0}
+.bar + .bar{margin-top:0}
+.btn{
+  font-family:inherit;font-weight:700;font-size:.88rem;cursor:pointer;
+  background:var(--card);color:var(--soft);border:1.5px solid var(--line);
+  border-radius:999px;padding:9px 15px;min-height:42px;transition:.15s;
+}
+.btn:hover{color:var(--ink);border-color:var(--soft)}
+.btn.on{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+
+/* ---------- thẻ lật ---------- */
+.flip{perspective:1600px;margin-bottom:16px}
+.inner{
+  position:relative;width:100%;
+  transform-style:preserve-3d;
+  transition:transform .6s cubic-bezier(.4,.1,.3,1), height .35s ease;
+}
+.inner.flipped{transform:rotateY(180deg)}
+.face{
+  position:absolute;top:0;left:0;width:100%;
+  -webkit-backface-visibility:hidden;backface-visibility:hidden;
+  background:var(--card);border:1.5px solid var(--line);border-radius:22px;
+  box-shadow:0 3px 0 var(--line);
+  padding:20px 18px;cursor:pointer;
+}
+.face.back{transform:rotateY(180deg)}
+
+/* --- mặt trước --- */
+.front .inner-front{
+  min-height:270px;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;text-align:center;gap:6px;
+}
+.front .hz{font-family:'Noto Serif SC',serif;font-weight:900;font-size:4.6rem;line-height:1.1;color:var(--rose)}
+.front .vnfront{font-size:1.75rem;font-weight:800;line-height:1.3;max-width:420px}
+
+.tag{
+  position:absolute;top:16px;left:16px;
+  width:30px;height:30px;border-radius:50%;
+  background:#F3E7D5;color:var(--accent);
+  font-size:.82rem;font-weight:800;
+  display:flex;align-items:center;justify-content:center;
+}
+.pos{
+  position:absolute;top:16px;right:16px;
+  font-size:.7rem;font-weight:800;letter-spacing:.4px;
+  color:#fff;background:var(--blue);border-radius:999px;padding:4px 10px;
+}
+.flipnote{
+  position:absolute;left:0;right:0;bottom:12px;text-align:center;
+  font-size:.74rem;color:var(--soft);opacity:.75;
+}
+.back .flipnote{position:static;margin-top:10px}
+
+/* ---------- phân loại ---------- */
+.state{
+  position:absolute;top:16px;right:16px;
+  font-size:.7rem;font-weight:800;border-radius:999px;padding:4px 10px;
+}
+.state.known{background:#E4EFE7;color:var(--green)}
+.state.review{background:#FAEBD5;color:#B0751E}
+.face.st-known{border-color:var(--green)}
+.face.st-review{border-color:var(--accent)}
+
+.acts{display:flex;gap:8px;margin-top:16px}
+.acts button{
+  flex:1 1 0;font-family:inherit;font-weight:800;font-size:.86rem;cursor:pointer;
+  border-radius:999px;padding:11px 8px;min-height:46px;
+  border:1.5px solid var(--line);background:var(--card);color:var(--soft);transition:.15s;
+}
+.acts button:hover{border-color:var(--soft);color:var(--ink)}
+.acts .ok.on{background:var(--green);border-color:var(--green);color:#fff}
+.acts .re.on{background:var(--accent);border-color:var(--accent);color:#fff}
+
+.counts{text-align:center;font-size:.82rem;color:var(--soft);margin:2px 0 14px}
+.counts .cK{color:var(--green);font-weight:800}
+.counts .cR{color:#B0751E;font-weight:800}
+.empty{
+  text-align:center;color:var(--soft);font-weight:700;
+  background:var(--card);border:1.5px dashed var(--line);border-radius:22px;padding:46px 20px;
+}
+
+/* --- mặt sau --- */
+.bhead{display:flex;align-items:center;gap:12px;margin:30px 0 4px}
+.bhead .hz{font-family:'Noto Serif SC',serif;font-weight:900;font-size:2.1rem;color:var(--rose);line-height:1.2}
+.bhead .pin{font-family:'Space Mono',monospace;font-size:.92rem;color:var(--soft)}
+.bhead .vnb{font-size:1.3rem;font-weight:800;line-height:1.3}
+
+.mean{
+  margin:10px 0 2px;
+  background:#FBF3E8;border:1.5px dashed var(--line);border-radius:14px;padding:10px 12px;
+}
+.mean .vn{font-size:1.12rem;font-weight:800;color:var(--ink)}
+.mean .hv{font-size:.72rem;font-weight:800;letter-spacing:1px;color:var(--accent);text-transform:uppercase;margin-top:3px}
+
+.use{
+  margin-top:10px;border-left:4px solid var(--green);
+  background:#F1F5F1;border-radius:0 12px 12px 0;padding:9px 12px;
+}
+.use .ulab{
+  font-size:.68rem;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;
+  color:var(--green);margin-bottom:2px;
+}
+.use .utxt{font-size:.9rem;font-weight:600;line-height:1.55}
+
+.tip{
+  margin-top:8px;border-left:4px solid var(--rose);
+  background:#FAF1F2;border-radius:0 12px 12px 0;padding:9px 12px;
+}
+.tip .ulab{
+  font-size:.68rem;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;
+  color:var(--rose);margin-bottom:2px;
+}
+.tip .utxt{font-size:.9rem;font-weight:600;line-height:1.55}
+
+.sec{margin-top:14px}
+.sec h3{
+  font-size:.7rem;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;
+  color:var(--soft);border-bottom:1.5px solid var(--line);padding-bottom:5px;margin-bottom:8px;
+}
+.item{display:flex;gap:10px;align-items:flex-start;padding:6px 0}
+.item + .item{border-top:1px dashed var(--line)}
+.item .body{flex:1 1 auto;min-width:0}
+.item .zh{font-family:'Noto Serif SC',serif;font-weight:700;font-size:1.18rem;line-height:1.35}
+.item .pz{font-family:'Space Mono',monospace;font-size:.74rem;color:var(--soft);margin-top:1px}
+.item .vn2{font-size:.9rem;color:var(--green);font-weight:700;margin-top:2px}
+.item .idx{font-family:'Quicksand',sans-serif;font-size:.8rem;color:var(--soft);margin-right:6px}
+.item .hl{color:var(--rose)}
+
+/* --- nút loa --- */
+.spk{
+  display:inline-flex;align-items:center;justify-content:center;
+  background:none;border:1.5px solid var(--line);border-radius:999px;
+  width:44px;height:44px;cursor:pointer;color:var(--accent);font-size:1.1rem;
+  transition:.15s;flex:0 0 auto;
+}
+.spk:hover{background:#F9F1E4;border-color:var(--accent)}
+.spk.sm{width:30px;height:30px;font-size:.8rem;margin-top:2px}
+.spk.playing{background:var(--accent);color:#fff;border-color:var(--accent)}
+
+/* ---------- điều hướng ---------- */
+.nav{display:flex;align-items:center;justify-content:center;gap:12px;margin-top:4px}
+.nav .arrow{
+  width:52px;height:52px;border-radius:50%;font-size:1.3rem;
+  background:var(--card);border:1.5px solid var(--line);color:var(--ink);
+  cursor:pointer;font-family:inherit;
+}
+.nav .arrow:hover{border-color:var(--soft)}
+.count{font-family:'Space Mono',monospace;font-size:.95rem;color:var(--soft);min-width:72px;text-align:center}
+.prog{height:6px;background:var(--line);border-radius:99px;margin-top:14px;overflow:hidden}
+.prog i{display:block;height:100%;background:var(--accent);border-radius:99px;transition:width .25s}
+
+.hint{text-align:center;color:var(--soft);font-size:.78rem;margin-top:16px;line-height:1.75}
+.hidden{display:none}
+
+/* ---------- chế độ xem tất cả ---------- */
+#stage.grid .flip{margin-bottom:14px}
+#stage.grid .front .inner-front{min-height:190px}
+#stage.grid .front .hz{font-size:3rem}
+#stage.grid .front .vnfront{font-size:1.3rem}
+
+@media(max-width:480px){
+  .front .hz{font-size:3.3rem}
+  .front .vnfront{font-size:1.45rem}
+  .item .zh{font-size:1.1rem}
+  .pos{font-size:.66rem;padding:3px 9px}
+}
+</style>
+<!-- MAM-XANH:dau -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Nunito:wght@500;600;700;800&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/giao-dien.css">
+<!-- MAM-XANH:cuoi -->
+
+</head>
+<body>
+<div class="wrap">
+
+  <p class="backlink"><a href="./">← Danh sách flashcard</a></p>
+
+  <header>
+    <div class="kicker">新HSK教程 3 · Bài 11</div>
+    <h1><span class="han">看来我没办法解决这个问题</span></h1>
+    <p>Flashcard từ vựng — 27 từ mới + 1 danh từ riêng</p>
+  </header>
+
+  <div class="bar">
+    <button class="btn on" id="dir-zh">汉字 → Việt</button>
+    <button class="btn" id="dir-vi">Việt → 汉字</button>
+  </div>
+  <div class="bar">
+    <button class="btn on" id="mode-deck">Lật từng thẻ</button>
+    <button class="btn" id="mode-grid">Xem tất cả</button>
+    <button class="btn" id="shuffle">Trộn thẻ</button>
+    <button class="btn" id="reset">Xoá phân loại</button>
+  </div>
+  <div class="bar">
+    <button class="btn on" id="f-all">Tất cả</button>
+    <button class="btn" id="f-new">Chưa phân loại</button>
+    <button class="btn" id="f-review">Cần ôn thêm</button>
+    <button class="btn" id="f-known">Đã thuộc</button>
+  </div>
+
+  <div class="counts" id="counts"></div>
+
+  <div id="stage"></div>
+
+  <div class="nav" id="nav">
+    <button class="arrow" id="prev" aria-label="Thẻ trước">‹</button>
+    <div class="count" id="count">1 / 28</div>
+    <button class="arrow" id="next" aria-label="Thẻ sau">›</button>
+  </div>
+  <div class="prog" id="progwrap"><i id="prog" style="width:4%"></i></div>
+
+  <p class="hint">
+    Chạm vào thẻ để lật · nhấn 🔊 để nghe đọc · lật xong thì chọn “Đã thuộc” hoặc “Cần ôn thêm”<br>
+    Bàn phím: ← → đổi thẻ · phím cách lật thẻ · phím 1 đã thuộc · phím 2 cần ôn thêm<br>
+    Phân loại được lưu lại trên máy, lần sau mở vẫn còn
+  </p>
+
+</div>
+
+<script>
+const DATA = {
+  lesson: 11,
+  words: [
+    {hz:"会议", py:"huìyì", pos:"danh từ · n.", vn:"cuộc họp, hội nghị", hv:"HỘI NGHỊ", use:"Danh từ chỉ CUỘC HỌP: 会议几点开始 · 有个会议 · 参加会议 · 会议室 (phòng họp) · 会议地点. ⚠ “Họp” (động từ) là 开会, không nói ✗开会议; 会议 chỉ làm chủ ngữ / tân ngữ: 会议下午两点开始。", tip:"会 HỘI: người tụ lại dưới một mái — hội, họp (có trong 会议 · 开会 · 机会). 议 NGHỊ: 讠 (lời) + 义 (lẽ phải) — mọi người đem lời ra bàn lẽ phải: bàn bạc; 义 có chấm trên đầu. Tụ lại để bàn = 会议, y như “hội nghị” tiếng Việt.",
+      ph:[["会议几点开始", "huìyì jǐ diǎn kāishǐ", "cuộc họp mấy giờ bắt đầu"], ["会议室", "huìyìshì", "phòng họp"]],
+      se:[["会议下午几点开始？", "Huìyì xiàwǔ jǐ diǎn kāishǐ?", "Cuộc họp chiều mấy giờ bắt đầu?", "会议下午几点开始"], ["我两点有个会议，我先走了。", "Wǒ liǎng diǎn yǒu ge huìyì, wǒ xiān zǒu le.", "Hai giờ tôi có cuộc họp, tôi đi trước nhé.", "有个会议"]]},
+
+    {hz:"开会", py:"kāihuì", pos:"động từ · v.", vn:"họp", hv:"KHAI HỘI", use:"Động từ “họp”: 不开会了 (không họp nữa) · 什么时候开会？ · 开会的时候 (lúc họp) · 开会前 (trước buổi họp). Trong bài khoá: 今天下午经理不在，不开会了。 ⚠ Không thêm tân ngữ sau 开会; danh từ cuộc họp là 会议.", tip:"开 KHAI: hai tay đẩy then cài cửa ra — MỞ (như 开机). 会 HỘI: người tụ lại dưới một mái — họp. Mở cuộc họp = 开会. Nhớ cặp: 开会 (động từ: họp) ↔ 会议 (danh từ: cuộc họp), cùng chữ 会.",
+      ph:[["不开会了", "bù kāihuì le", "không họp nữa"], ["开会的时候", "kāihuì de shíhou", "lúc họp"]],
+      se:[["今天下午经理不在，不开会了。", "Jīntiān xiàwǔ jīnglǐ bú zài, bù kāihuì le.", "Chiều nay giám đốc không có, không họp nữa.", "不开会了"], ["开会的时候，我们用会议室的电脑还是自己的笔记本电脑？", "Kāihuì de shíhou, wǒmen yòng huìyìshì de diànnǎo háishi zìjǐ de bǐjìběn diànnǎo?", "Lúc họp, mình dùng máy tính phòng họp hay laptop riêng?", "开会的时候"]]},
+
+    {hz:"经理", py:"jīnglǐ", pos:"danh từ · n.", vn:"giám đốc, trưởng phòng, quản lý", hv:"KINH LÝ", use:"Danh từ chỉ người quản lý (giám đốc, trưởng phòng). Gọi theo họ + 经理: 刘经理 · 王经理; nói chung: 我们经理 · 经理不在 · 总经理 (tổng giám đốc). Khách gọi tìm sếp: 对不起，王经理现在不在办公室。", tip:"经 KINH: 纟 (sợi tơ) + khung cửi — sợi dọc trên khung cửi: trải qua, lo liệu (như 已经). 理 LÝ: 王 (ngọc) + 里 — thợ mài ngọc theo đúng đường vân: lẽ, sắp xếp. Người lo liệu, sắp xếp công việc = 经理.",
+      ph:[["刘经理", "Liú jīnglǐ", "giám đốc Lưu"], ["我们经理", "wǒmen jīnglǐ", "giám đốc của chúng tôi"]],
+      se:[["今天下午经理不在，不开会了。", "Jīntiān xiàwǔ jīnglǐ bú zài, bù kāihuì le.", "Chiều nay giám đốc không có, không họp nữa.", "经理不在"], ["对不起，王经理现在不在办公室。", "Duìbuqǐ, Wáng jīnglǐ xiànzài bú zài bàngōngshì.", "Xin lỗi, giám đốc Vương hiện không có ở văn phòng.", "王经理"]]},
+
+    {hz:"后天", py:"hòutiān", pos:"danh từ · n.", vn:"ngày kia", hv:"HẬU THIÊN", use:"Danh từ thời gian “ngày kia” (hôm nay + 2): 后天上午 · 明天或者后天 · 后天开会. Chuỗi: 前天 – 昨天 – 今天 – 明天 – 后天. Đứng trước động từ hoặc đầu câu như 明天: 后天上午十点开会。", tip:"后 HẬU: người đứng phía sau ra lệnh — SAU (đã gặp 后年, Bài 10). 天 THIÊN: nét ngang trên đầu người 大 — trời, ngày (như 今天). Ngày ở phía sau nữa = 后天; đổi 天 thành 年 là 后年 (năm sau nữa).",
+      ph:[["后天上午", "hòutiān shàngwǔ", "sáng ngày kia"], ["明天或者后天", "míngtiān huòzhě hòutiān", "mai hoặc ngày kia"]],
+      se:[["后天上午十点，会议地点换到第一会议室。", "Hòutiān shàngwǔ shí diǎn, huìyì dìdiǎn huàndào dì-yī huìyìshì.", "10 giờ sáng ngày kia, địa điểm họp đổi sang phòng họp số 1.", "后天上午"], ["今天好几个人请假了，我们明天或者后天再开会吧。", "Jīntiān hǎo jǐ ge rén qǐngjià le, wǒmen míngtiān huòzhě hòutiān zài kāihuì ba.", "Hôm nay mấy người xin nghỉ, mai hoặc ngày kia mình họp lại nhé.", "明天或者后天"]]},
+
+    {hz:"地点", py:"dìdiǎn", pos:"danh từ · n.", vn:"địa điểm", hv:"ĐỊA ĐIỂM", use:"Danh từ chỉ ĐỊA ĐIỂM của một sự việc cụ thể (họp, thi, hẹn): 会议地点 · 考试地点 · 时间和地点 · 地点换到第一会议室. ⚠ Nơi chốn nói chung (nơi đẹp, nơi xa) là 地方 (Bài 12), không dùng 地点.", tip:"地 ĐỊA: 土 (đất) + 也 — mặt đất, nơi chốn (như 地铁). 点 ĐIỂM: 占 + 灬 (lửa) — đốm lửa nhỏ: chấm, điểm (như 一点儿). Một điểm trên mặt đất = 地点, y hệt “địa điểm” tiếng Việt.",
+      ph:[["会议地点", "huìyì dìdiǎn", "địa điểm họp"], ["时间和地点", "shíjiān hé dìdiǎn", "thời gian và địa điểm"]],
+      se:[["后天上午十点，会议地点换到第一会议室。", "Hòutiān shàngwǔ shí diǎn, huìyì dìdiǎn huàndào dì-yī huìyìshì.", "10 giờ sáng ngày kia, địa điểm họp đổi sang phòng họp số 1.", "会议地点"], ["考试的时间和地点都换了。", "Kǎoshì de shíjiān hé dìdiǎn dōu huàn le.", "Thời gian và địa điểm thi đều đổi rồi.", "时间和地点"]]},
+
+    {hz:"室", py:"shì", pos:"danh từ · n.", vn:"phòng", hv:"THẤT", use:"Danh từ “phòng”, thường ghép sau từ khác chứ ít đứng một mình: 会议室 (phòng họp) · 第一会议室 · 办公室 (văn phòng, Bài 10) · 教室 (lớp học). Gặp chữ 室 là biết đó là một căn phòng.", tip:"Mái nhà 宀 ở trên, 至 (tới) ở dưới: nơi đi tới rồi ở lại — PHÒNG. Đã gặp trong 教室, 办公室 (Bài 10), nay thêm 会议室. Âm Hán Việt THẤT như “tư thất”.",
+      ph:[["会议室", "huìyìshì", "phòng họp"], ["第一会议室", "dì-yī huìyìshì", "phòng họp số 1"]],
+      se:[["会议室的电脑或者自己的电脑都可以。", "Huìyìshì de diànnǎo huòzhě zìjǐ de diànnǎo dōu kěyǐ.", "Máy phòng họp hay máy riêng đều được.", "会议室"], ["后天上午十点，会议地点换到第一会议室。", "Hòutiān shàngwǔ shí diǎn, huìyì dìdiǎn huàndào dì-yī huìyìshì.", "10 giờ sáng ngày kia, địa điểm họp đổi sang phòng họp số 1.", "第一会议室"]]},
+
+    {hz:"发", py:"fā", pos:"động từ · v.", vn:"gửi", hv:"PHÁT", use:"Động từ “gửi” email, tin nhắn, tài liệu: 发邮件 · 给大家发邮件 · 发到邮箱里. Khung: 给 + người + 发 + cái gì, hoặc 把 + cái gì + 发到 / 发给 + …. Trong bài khoá: 我正要给大家发邮件。", tip:"发 PHÁT: hình tay bắn mũi tên — phát đi, gửi đi. Đã gặp trong 发烧 (phát sốt, Bài 8), nay 发邮件 là bấm một cái cho thư “bắn” đi. Âm Hán Việt PHÁT như “phát hành”.",
+      ph:[["发邮件", "fā yóujiàn", "gửi email"], ["发到邮箱里", "fādào yóuxiāng li", "gửi vào hộp thư"]],
+      se:[["我正要给大家发邮件。", "Wǒ zhèng yào gěi dàjiā fā yóujiàn.", "Tôi đang định gửi email cho mọi người.", "发邮件"], ["明天开会前要发到公司的邮箱里。", "Míngtiān kāihuì qián yào fādào gōngsī de yóuxiāng li.", "Trước buổi họp ngày mai phải gửi vào hộp thư công ty.", "发到公司的邮箱里"]]},
+
+    {hz:"笔记本电脑", py:"bǐjìběn (diànnǎo)", pos:"danh từ · n.", vn:"máy tính xách tay, laptop", hv:"BÚT KÝ BẢN ĐIỆN NÃO", use:"Danh từ chỉ máy tính xách tay, nói tắt là 笔记本: 自己的笔记本电脑 · 用笔记本电脑 · 把笔记本电脑接好 (cắm máy xong). Trong bài khoá: 我们用会议室的电脑还是自己的笔记本电脑？", tip:"笔记本 BÚT KÝ BẢN: 笔 (竹 tre + 毛 lông: bút) + 记 (讠 + 己: tự ghi) + 本 (木 cây + nét ngang ở gốc: quyển) — quyển sổ ghi chép (đã gặp 笔记, Bài 10). 电脑 ĐIỆN NÃO: 电 (tia chớp) + 脑 (月 thịt + đỉnh đầu: não) — máy tính. Máy tính mỏng như quyển sổ = laptop.",
+      ph:[["自己的笔记本电脑", "zìjǐ de bǐjìběn diànnǎo", "laptop của mình"], ["把笔记本电脑接好", "bǎ bǐjìběn diànnǎo jiēhǎo", "cắm xong laptop"]],
+      se:[["开会的时候，我们用会议室的电脑还是自己的笔记本电脑？", "Kāihuì de shíhou, wǒmen yòng huìyìshì de diànnǎo háishi zìjǐ de bǐjìběn diànnǎo?", "Lúc họp, mình dùng máy tính phòng họp hay laptop riêng?", "自己的笔记本电脑"], ["他还没把笔记本电脑接好呢。", "Tā hái méi bǎ bǐjìběn diànnǎo jiēhǎo ne.", "Anh ấy vẫn chưa cắm xong laptop.", "把笔记本电脑接好"]]},
+
+    {hz:"或者", py:"huòzhě", pos:"liên từ · conj.", vn:"hoặc, hay là", hv:"HOẶC GIẢ", use:"Liên từ “hoặc”, nêu các khả năng trong câu KỂ, cái nào cũng được: A 或者 B (都可以): 会议室的电脑或者自己的电脑都可以 · 米饭或者面条都可以 · 明天或者后天. ⚠ Câu HỎI để người khác chọn thì dùng 还是: 你喝咖啡还是茶？ — không nói ✗你喝咖啡或者茶？", tip:"或 HOẶC: 戈 (giáo) canh giữ một vùng đất (口 + 一) — đất có thể bị đánh chiếm: có thể, hoặc; khác 国 vì không có khung bao 囗. 者 GIẢ: trên là 耂 (người già), dưới 日 — “người, cái”. Cái này hoặc cái kia = 或者. Nhớ cặp: 或者 — câu kể; 还是 — câu hỏi.",
+      ph:[["A或者B都可以", "A huòzhě B dōu kěyǐ", "A hoặc B đều được"], ["明天或者后天", "míngtiān huòzhě hòutiān", "mai hoặc ngày kia"]],
+      se:[["会议室的电脑或者自己的电脑都可以。", "Huìyìshì de diànnǎo huòzhě zìjǐ de diànnǎo dōu kěyǐ.", "Máy phòng họp hay máy riêng đều được.", "或者自己的电脑都可以"], ["米饭或者面条都可以。", "Mǐfàn huòzhě miàntiáo dōu kěyǐ.", "Cơm hay mì đều được.", "米饭或者面条都可以"]]},
+
+    {hz:"声音", py:"shēngyīn", pos:"danh từ · n.", vn:"âm thanh, tiếng; giọng", hv:"THANH ÂM", use:"Danh từ chỉ âm thanh, tiếng, giọng: 听不见声音 (không nghe thấy tiếng) · 听得见声音 · 声音有点儿小 · 声音很大. Tả to nhỏ dùng 大 / 小. Trong bài khoá máy tính lỗi: 看见了，但是听不见声音。", tip:"声 THANH: 士 + hình chuông đá treo — gõ phát ra tiếng (đã gặp 声, Bài 7). 音 ÂM: 立 (đứng) + 日 — lời từ miệng người đứng nói ra: âm (như 音乐). THANH ÂM đảo lại là “âm thanh” tiếng Việt.",
+      ph:[["听不见声音", "tīng bu jiàn shēngyīn", "không nghe thấy tiếng"], ["声音有点儿小", "shēngyīn yǒudiǎnr xiǎo", "tiếng hơi nhỏ"]],
+      se:[["看见了，但是听不见声音。", "Kànjiàn le, dànshì tīng bu jiàn shēngyīn.", "Thấy rồi, nhưng không nghe được tiếng.", "听不见声音"], ["听得见声音，但是声音有点儿小，听不清楚。", "Tīng de jiàn shēngyīn, dànshì shēngyīn yǒudiǎnr xiǎo, tīng bu qīngchu.", "Nghe được tiếng rồi, nhưng tiếng hơi nhỏ, nghe không rõ.", "声音有点儿小"]]},
+
+    {hz:"办法", py:"bànfǎ", pos:"danh từ · n.", vn:"cách, biện pháp", hv:"BIỆN PHÁP", use:"Danh từ chỉ CÁCH giải quyết một việc cụ thể: 有办法 · 没办法 (hết cách, đành chịu) · 想办法 (nghĩ cách) · 好办法. Khung: 没办法 + V: 没办法解决. ⚠ 方法 (Bài 8) là phương pháp chung (学习方法); 办法 là cách xử lý một tình huống.", tip:"办 BIỆN: 力 (sức) + hai chấm — ra sức lo liệu: làm, xử lý (như 办公室). 法 PHÁP: 氵 (nước) + 去 — nước chảy theo một lối: phép, cách (như 方法, Bài 8). Cách để xử lý việc = 办法, BIỆN PHÁP. Câu cửa miệng: 没办法！",
+      ph:[["没办法", "méi bànfǎ", "hết cách, không có cách"], ["想办法", "xiǎng bànfǎ", "nghĩ cách"]],
+      se:[["看来我没办法解决这个问题，只能找别人来帮帮忙了。", "Kànlái wǒ méi bànfǎ jiějué zhège wèntí, zhǐ néng zhǎo biérén lái bāngbang máng le.", "Xem ra em không xử lý được rồi, đành nhờ người khác qua giúp thôi.", "没办法"], ["别着急，我们一起想办法。", "Bié zháojí, wǒmen yìqǐ xiǎng bànfǎ.", "Đừng sốt ruột, chúng ta cùng nghĩ cách.", "想办法"]]},
+
+    {hz:"解决", py:"jiějué", pos:"động từ · v.", vn:"giải quyết", hv:"GIẢI QUYẾT", use:"Dùng khi XỬ LÝ XONG một vấn đề, khó khăn: 解决问题 · 已经解决了 · 解决不了 (không giải quyết nổi) · 没办法解决. Tân ngữ thường là 问题 / 困难, không phải người. Hỏi: 遇到问题怎么解决？", tip:"解 GIẢI: 角 (sừng) + 刀 (dao) + 牛 (bò) — dùng dao tháo sừng bò: tháo gỡ; 13 nét, 角 bên trái. 决 QUYẾT: 冫 (băng) + 夬 — băng nứt vỡ: dứt khoát (như 决定, Bài 7). Tháo gỡ dứt điểm = 解决, y hệt “giải quyết”.",
+      ph:[["解决问题", "jiějué wèntí", "giải quyết vấn đề"], ["没办法解决", "méi bànfǎ jiějué", "không có cách giải quyết"]],
+      se:[["已经解决了，现在能用了。", "Yǐjīng jiějué le, xiànzài néng yòng le.", "Giải quyết xong rồi, giờ dùng được rồi.", "解决了"], ["看来我没办法解决这个问题。", "Kànlái wǒ méi bànfǎ jiějué zhège wèntí.", "Xem ra tôi không có cách nào giải quyết vấn đề này.", "没办法解决"]]},
+
+    {hz:"别人", py:"biérén", pos:"đại từ · pron.", vn:"người khác", hv:"BIỆT NHÂN", use:"Đại từ chỉ NGƯỜI KHÁC (không phải mình): 找别人 (tìm người khác) · 别人的东西 · 帮助别人. Đứng làm chủ ngữ hoặc tân ngữ như danh từ. Trong bài khoá: 只能找别人来帮帮忙了。", tip:"别 BIỆT: 刂 (dao) tách ra làm hai — khác, lìa (như 别的). 人 NHÂN: hình người đứng nghiêng — người. Đã biết 别的 (cái khác), nay 别 + 人 = người khác — cùng một công thức.",
+      ph:[["找别人", "zhǎo biérén", "tìm người khác"], ["别人的东西", "biérén de dōngxi", "đồ của người khác"]],
+      se:[["只能找别人来帮帮忙了。", "Zhǐ néng zhǎo biérén lái bāngbang máng le.", "Đành tìm người khác đến giúp thôi.", "找别人"], ["不要拿别人的东西。", "Bú yào ná biérén de dōngxi.", "Đừng lấy đồ của người khác.", "别人的东西"]]},
+
+    {hz:"只能", py:"zhǐ néng", pos:"cụm cố định", vn:"chỉ có thể, đành", hv:"CHỈ NĂNG", use:"Dùng khi KHÔNG CÒN cách nào khác, đành phải làm: 只能 + V: 只能找别人 · 只能走下去 · 只能晚一点儿到了 · 只能明天再说. Hay đi sau 看来 và kết thúc bằng 了: 看来……，只能……了. Sắc thái: miễn cưỡng, đành chịu.", tip:"只 CHỈ: 口 + 八 — mở miệng chỉ nói một câu: chỉ (như 只是, Bài 9). 能 NĂNG: hình con gấu khoẻ mạnh — có sức, có thể. Chỉ có thể làm vậy thôi = 只能, đành. Nhớ cả khung 看来…只能…了.",
+      ph:[["只能找别人", "zhǐ néng zhǎo biérén", "đành tìm người khác"], ["只能走下去", "zhǐ néng zǒu xiàqù", "đành đi bộ xuống"]],
+      se:[["看来我没办法解决这个问题，只能找别人来帮帮忙了。", "Kànlái wǒ méi bànfǎ jiějué zhège wèntí, zhǐ néng zhǎo biérén lái bāngbang máng le.", "Xem ra em không xử lý được rồi, đành nhờ người khác qua giúp thôi.", "只能找别人"], ["我只能晚一点儿到了。", "Wǒ zhǐ néng wǎn yìdiǎnr dào le.", "Tôi đành đến muộn một chút vậy.", "只能晚一点儿到"]]},
+
+    {hz:"看来", py:"kànlái", pos:"động từ · v.", vn:"xem ra, có vẻ", hv:"KHÁN LAI", use:"Dùng khi RÚT RA kết luận từ dấu hiệu mình nhìn thấy: 看来 + kết luận: 看来我没办法解决 · 这么晚了，看来他不会来了 · 天阴了，看来要下雨了. Thường đứng đầu vế sau, sau khi nêu dấu hiệu. ⚠ Nêu ý kiến, sở thích riêng dùng 我觉得; tả bề ngoài dùng 看起来 (Bài 1).", tip:"看 KHÁN: 手 che trên 目 — che nắng nhìn xa: nhìn (như 看起来, Bài 1). 来 LAI: hình cây lúa mì, mượn nghĩa tới. Nhìn các dấu hiệu rồi đi tới kết luận = 看来. So với 看起来 (trông có vẻ — tả bề ngoài), 看来 là suy luận.",
+      ph:[["看来……了", "kànlái…… le", "xem ra… rồi"], ["看来他不会来了", "kànlái tā bú huì lái le", "xem ra anh ấy không đến đâu"]],
+      se:[["看来我没办法解决这个问题。", "Kànlái wǒ méi bànfǎ jiějué zhège wèntí.", "Xem ra tôi không có cách nào giải quyết vấn đề này.", "看来"], ["看来他今天不会来了。", "Kànlái tā jīntiān bú huì lái le.", "Xem ra hôm nay anh ấy không đến đâu.", "看来他今天不会来了"]]},
+
+    {hz:"同事", py:"tóngshì", pos:"danh từ · n.", vn:"đồng nghiệp", hv:"ĐỒNG SỰ", use:"Danh từ chỉ người làm cùng công ty, cơ quan: 我的同事 · 好几个同事 · 新同事 · 上海的同事. Giới thiệu: 这是我的同事小王。 Phân biệt theo chỗ: 同学 (cùng học) · 同事 (cùng làm việc).", tip:"同 ĐỒNG: 冂 (khung) + 一 + 口 — mọi miệng trong một khung: cùng (như 同学). 事 SỰ: bàn tay cầm cây bút ghi chép công việc — việc (như 事情). Người cùng làm việc = 同事; đổi 学 trong 同学 thành 事 là xong.",
+      ph:[["好几个同事", "hǎo jǐ ge tóngshì", "mấy đồng nghiệp"], ["新同事", "xīn tóngshì", "đồng nghiệp mới"]],
+      se:[["好几个同事都休假了，开会前这么多工作我怕干不完。", "Hǎo jǐ ge tóngshì dōu xiūjià le, kāihuì qián zhème duō gōngzuò wǒ pà gàn bu wán.", "Mấy đồng nghiệp đều nghỉ phép, trước buổi họp nhiều việc thế này tôi sợ làm không xong.", "好几个同事"], ["这是我的同事小王。", "Zhè shì wǒ de tóngshì Xiǎo Wáng.", "Đây là đồng nghiệp của tôi, Tiểu Vương.", "我的同事"]]},
+
+    {hz:"请假", py:"qǐngjià", pos:"động từ · v.", vn:"xin nghỉ", hv:"THỈNH GIẢ", use:"Dùng khi XIN PHÉP nghỉ làm, nghỉ học vì việc riêng: 请假 · 跟经理请假 · 请一天假 · 请了两天假. Là từ ly hợp: thời lượng chen vào giữa. ⚠ Không nói ✗请假两天; nghỉ phép đi chơi (đã được duyệt) là 休假.", tip:"请 THỈNH: 讠 (lời) + 青 — lời mời trong trẻo: mời, xin. 假 GIẢ: 亻 + 叚 (mượn) — mượn thời gian để nghỉ: ngày nghỉ, đọc jià (như 放假, Bài 6). Mở lời xin ngày nghỉ = 请假; chen số ngày vào giữa: 请 + 一天 + 假.",
+      ph:[["跟经理请假", "gēn jīnglǐ qǐngjià", "xin giám đốc nghỉ"], ["请一天假", "qǐng yì tiān jià", "xin nghỉ một ngày"]],
+      se:[["老张没来。他说家里有点儿事，所以请假了。", "Lǎo Zhāng méi lái. Tā shuō jiā li yǒudiǎnr shì, suǒyǐ qǐngjià le.", "Anh Trương không đến. Anh ấy bảo nhà có chút việc nên xin nghỉ rồi.", "请假了"], ["老师，我今天想请一天假。", "Lǎoshī, wǒ jīntiān xiǎng qǐng yì tiān jià.", "Thưa cô, hôm nay em muốn xin nghỉ một ngày.", "请一天假"]]},
+
+    {hz:"休假", py:"xiūjià", pos:"động từ · v.", vn:"nghỉ phép", hv:"HƯU GIẢ", use:"Dùng khi được NGHỈ PHÉP, thường nhiều ngày, để đi chơi hay nghỉ ngơi: 休假 · 去休假 · 休假一个星期 · 休了一个星期假 (ly hợp) · 同事都休假了. ⚠ Xin phép nghỉ vì có việc → 请假.", tip:"休 HƯU: 亻 (người) dựa vào 木 (cây) — nghỉ (như 休息). 假 GIẢ: 亻 + 叚 (mượn) — mượn thời gian để nghỉ: kỳ nghỉ (như 放假). Nghỉ ngơi trong kỳ nghỉ = 休假. Cặp 请假 (xin nghỉ) ↔ 休假 (đi nghỉ) cùng chữ 假.",
+      ph:[["去休假", "qù xiūjià", "đi nghỉ phép"], ["休了一个星期假", "xiū le yí ge xīngqī jià", "nghỉ phép một tuần"]],
+      se:[["好几个同事都休假了，开会前这么多工作我怕干不完。", "Hǎo jǐ ge tóngshì dōu xiūjià le, kāihuì qián zhème duō gōngzuò wǒ pà gàn bu wán.", "Mấy đồng nghiệp đều nghỉ phép, trước buổi họp nhiều việc thế này tôi sợ làm không xong.", "休假了"], ["下个月我要休假一个星期。", "Xià ge yuè wǒ yào xiūjià yí ge xīngqī.", "Tháng sau tôi nghỉ phép một tuần.", "休假一个星期"]]},
+
+    {hz:"怕", py:"pà", pos:"động từ · v.", vn:"sợ; e rằng", hv:"PHẠ", use:"Dùng khi SỢ một thứ gì, hoặc LO rằng điều xấu sẽ xảy ra: 怕 + N (怕狗 · 最怕考试) · 怕 + kết quả xấu (怕干不完 · 怕说错 · 怕迟到). ⚠ Lo cho ai thì dùng 担心 + người (Bài 8); 怕你 nghĩa là “sợ bạn”.", tip:"忄 (lòng) + 白 (trắng): sợ đến tái mặt trắng bệch — SỢ; 白 bên phải. Chữ 白 đã quen (白色, 明白), thêm bộ tâm đứng 忄 là thành sợ. Âm Hán Việt PHẠ.",
+      ph:[["怕干不完", "pà gàn bu wán", "sợ làm không xong"], ["怕说错", "pà shuōcuò", "sợ nói sai"]],
+      se:[["开会前这么多工作我怕干不完。", "Kāihuì qián zhème duō gōngzuò wǒ pà gàn bu wán.", "Trước buổi họp nhiều việc thế này tôi sợ làm không xong.", "怕干不完"], ["我怕说错，不好意思说。", "Wǒ pà shuōcuò, bù hǎoyìsi shuō.", "Tôi sợ nói sai, ngại không dám nói.", "怕说错"]]},
+
+    {hz:"邮箱", py:"yóuxiāng", pos:"danh từ · n.", vn:"hộp thư (email)", hv:"BƯU TƯƠNG", use:"Danh từ chỉ hộp thư điện tử: 发到邮箱里 · 公司的邮箱 · 我的邮箱 · 邮箱地址. Khung hay dùng: 把 + file / email + 发到 + 邮箱里. Trong bài khoá: 明天开会前要发到公司的邮箱里。", tip:"邮 BƯU: 由 + 阝 (thành ấp) — thư từ chuyển qua các ấp: bưu (như 邮件, Bài 5). 箱 TƯƠNG: 竹 (tre) + 相 — hòm đan bằng tre: hòm, hộp (như 冰箱). Hòm đựng thư = 邮箱; 邮件 là lá thư, 邮箱 là hộp đựng.",
+      ph:[["发到邮箱里", "fādào yóuxiāng li", "gửi vào hộp thư"], ["公司的邮箱", "gōngsī de yóuxiāng", "hộp thư công ty"]],
+      se:[["请把照片发到我的邮箱里。", "Qǐng bǎ zhàopiàn fādào wǒ de yóuxiāng li.", "Bạn gửi ảnh vào hộp thư của tôi nhé.", "发到我的邮箱里"], ["明天开会前要发到公司的邮箱里。", "Míngtiān kāihuì qián yào fādào gōngsī de yóuxiāng li.", "Trước buổi họp ngày mai phải gửi vào hộp thư công ty.", "公司的邮箱"]]},
+
+    {hz:"城市", py:"chéngshì", pos:"danh từ · n.", vn:"thành phố", hv:"THÀNH THỊ", use:"Danh từ chỉ thành phố: 大城市 · 别的城市 · 这个城市 · 你的城市 · 去别的城市工作. Hỏi: 你喜欢你的城市吗？ Tên thành phố cụ thể nói thẳng: 北京 · 上海 · 胡志明市.", tip:"城 THÀNH: 土 (đất) + 成 (thành, Bài 9) — đắp đất thành tường: thành; 成 bên phải. 市 THỊ: trên là mái che, dưới 巾 (khăn) — sạp vải dưới mái che: chợ (như 超市). Nơi có tường thành và chợ = 城市, THÀNH THỊ.",
+      ph:[["别的城市", "bié de chéngshì", "thành phố khác"], ["大城市", "dà chéngshì", "thành phố lớn"]],
+      se:[["我去别的城市工作就要离开他们。", "Wǒ qù bié de chéngshì gōngzuò jiù yào líkāi tāmen.", "Tôi sang thành phố khác làm việc thì phải xa họ.", "别的城市"], ["你喜欢你的城市吗？", "Nǐ xǐhuan nǐ de chéngshì ma?", "Bạn có thích thành phố của mình không?", "你的城市"]]},
+
+    {hz:"离开", py:"líkāi", pos:"động từ · v.", vn:"rời, rời xa", hv:"LY KHAI", use:"Dùng khi RỜI một nơi hoặc một người, thường lâu dài: 离开 + nơi / người: 离开家 · 离开北京 · 离开家人 · 离开他们. ⚠ Chào để đi về chỉ nói 我走了, không nói ✗我离开了; 离开 nghe nặng như chia xa.", tip:"离 LY: hình con chim sa lưới rồi thoát ra — lìa (đã gặp 离……近). 开 KHAI: hai tay đẩy then cài cửa ra — mở, tách ra. Tách ra mà lìa xa = 离开, LY KHAI như “ly biệt”, “ly hương”.",
+      ph:[["离开家人", "líkāi jiārén", "xa gia đình"], ["离开北京", "líkāi Běijīng", "rời Bắc Kinh"]],
+      se:[["我去别的城市工作就要离开他们。", "Wǒ qù bié de chéngshì gōngzuò jiù yào líkāi tāmen.", "Tôi sang thành phố khác làm việc thì phải xa họ.", "离开他们"], ["刚离开家的时候，我很想妈妈。", "Gāng líkāi jiā de shíhou, wǒ hěn xiǎng māma.", "Lúc mới xa nhà, tôi rất nhớ mẹ.", "离开家"]]},
+
+    {hz:"机会", py:"jīhuì", pos:"danh từ · n.", vn:"cơ hội, dịp", hv:"CƠ HỘI", use:"Danh từ chỉ cơ hội, dịp: 有机会 · 好机会 · 没机会 · 更好的机会 · 说汉语的机会. Khung: 有机会 + V (có dịp thì làm gì): 有机会我一定去。 Hay dùng khi cân nhắc một lựa chọn: 这是个好机会。", tip:"机 CƠ: 木 + 几 — khung gỗ có bộ phận chuyển động: máy; then chốt (như 手机). 会 HỘI: người tụ lại dưới một mái — gặp gỡ. Thời điểm then chốt gặp đúng lúc = 机会, đọc jīhuì gần y “cơ hội”.",
+      ph:[["好机会", "hǎo jīhuì", "cơ hội tốt"], ["有机会", "yǒu jīhuì", "có cơ hội, có dịp"]],
+      se:[["去上海可能会有更好的机会。", "Qù Shànghǎi kěnéng huì yǒu gèng hǎo de jīhuì.", "Sang Thượng Hải có thể có cơ hội tốt hơn.", "更好的机会"], ["有机会我一定去。", "Yǒu jīhuì wǒ yídìng qù.", "Có dịp tôi nhất định đi.", "有机会"]]},
+
+    {hz:"生活", py:"shēnghuó", pos:"danh từ / động từ", vn:"cuộc sống; sống", hv:"SINH HOẠT", use:"Danh từ: cuộc sống — 生活很重要 · 生活习惯 · 在北京的生活. Động từ: sinh sống ở đâu — 在 + nơi + 生活: 在北京生活了三年. Trong bài khoá: 对我来说，生活也很重要。", tip:"生 SINH: mầm cây nhú lên khỏi đất — sinh, sống (như 学生). 活 HOẠT: 氵 (nước) + 舌 (lưỡi) — có nước, lưỡi còn ướt là còn sống. SINH HOẠT = đời sống. Phân biệt 活 (氵) ↔ 话 (讠) cùng phần 舌.",
+      ph:[["在北京生活", "zài Běijīng shēnghuó", "sống ở Bắc Kinh"], ["生活很重要", "shēnghuó hěn zhòngyào", "cuộc sống rất quan trọng"]],
+      se:[["我在北京生活了三年。", "Wǒ zài Běijīng shēnghuó le sān nián.", "Tôi đã sống ở Bắc Kinh ba năm.", "在北京生活"], ["对我来说，生活也很重要。", "Duì wǒ lái shuō, shēnghuó yě hěn zhòngyào.", "Với tôi, cuộc sống cũng rất quan trọng.", "生活也很重要"]]},
+
+    {hz:"为", py:"wèi", pos:"giới từ · prep.", vn:"vì, cho (ai / việc gì)", hv:"VỊ", use:"Giới từ “vì, cho (ai / việc gì)”, đứng trước đối tượng rồi tới động từ: 为 + người / việc + V: 为工作离开家人 · 为你准备的礼物. ⚠ Đọc wèi (thanh 4); 为了 (Bài 9) nêu mục đích, 为 + người thường là “vì ai, cho ai”.", tip:"为 VỊ: hai chấm như mồ hôi người làm lụng — vì. Đã học 为了 (vì, để — Bài 9) và 为什么 (vì sao): cùng một chữ 为, bỏ 了 đi là thành giới từ 为 (wèi — vì ai). Âm Hán Việt VỊ như “vị tha”.",
+      ph:[["为工作", "wèi gōngzuò", "vì công việc"], ["为你准备", "wèi nǐ zhǔnbèi", "chuẩn bị cho bạn"]],
+      se:[["我不愿意为工作或学习离开家人。", "Wǒ bú yuànyì wèi gōngzuò huò xuéxí líkāi jiārén.", "Tôi không muốn vì công việc hay học hành mà xa gia đình.", "为工作或学习"], ["这是同事们为你准备的礼物。", "Zhè shì tóngshìmen wèi nǐ zhǔnbèi de lǐwù.", "Đây là món quà các đồng nghiệp chuẩn bị cho bạn.", "为你准备"]]},
+
+    {hz:"或", py:"huò", pos:"liên từ · conj.", vn:"hoặc (văn viết)", hv:"HOẶC", use:"Liên từ “hoặc”, dạng văn viết ngắn gọn của 或者, nối hai danh từ / động từ: 工作或学习 · 一年或两年. Dùng để hiểu khi đọc nhật ký, thông báo; khi nói chuyện thì dùng 或者.", tip:"或 HOẶC: 戈 (giáo) canh giữ một vùng đất (口 + 一) — đất có thể bị đánh chiếm: có thể, hoặc. Khác 国: 或 không có khung bao 囗. Viết một chữ 或 là văn viết, hai chữ 或者 là khẩu ngữ.",
+      ph:[["工作或学习", "gōngzuò huò xuéxí", "công việc hoặc học hành"], ["一年或两年", "yì nián huò liǎng nián", "một hoặc hai năm"]],
+      se:[["我不愿意为工作或学习离开家人。", "Wǒ bú yuànyì wèi gōngzuò huò xuéxí líkāi jiārén.", "Tôi không muốn vì công việc hay học hành mà xa gia đình.", "工作或学习"], ["他打算在上海工作一年或两年。", "Tā dǎsuàn zài Shànghǎi gōngzuò yì nián huò liǎng nián.", "Anh ấy định làm việc ở Thượng Hải một hoặc hai năm.", "一年或两年"]]},
+
+    {hz:"愿意", py:"yuànyì", pos:"trợ động từ · aux.", vn:"bằng lòng, sẵn lòng", hv:"NGUYỆN Ý", use:"Dùng khi SẴN LÒNG hoặc không sẵn lòng làm một việc, thường sau khi được đề nghị và cân nhắc: 愿意 + V (我愿意去) · 不愿意 + V · 愿意不愿意 (hỏi): 愿意不愿意去上海 · 不愿意离开家人. ⚠ 不 đứng trước 愿意; muốn ăn, muốn đi chơi thì dùng 想.", tip:"愿 NGUYỆN: 原 (nguồn) + 心 (lòng) — điều mong từ tận đáy lòng; 心 nằm DƯỚI, khác 忄. 意 Ý: 音 (âm) + 心 (lòng) — tiếng nói trong lòng (như 意思). Lòng mong, ý muốn = 愿意, sẵn lòng.",
+      ph:[["愿意不愿意", "yuànyì bu yuànyì", "có bằng lòng không"], ["不愿意离开", "bú yuànyì líkāi", "không muốn rời xa"]],
+      se:[["一起吃饭时，他们跟我说最近有不少同事去上海工作了，问我愿意不愿意也去上海。", "Yìqǐ chī fàn shí, tāmen gēn wǒ shuō zuìjìn yǒu bù shǎo tóngshì qù Shànghǎi gōngzuò le, wèn wǒ yuànyì bu yuànyì yě qù Shànghǎi.", "Lúc ăn cơm cùng nhau, họ bảo dạo này nhiều đồng nghiệp sang Thượng Hải làm việc, hỏi tôi có muốn sang Thượng Hải luôn không.", "愿意不愿意"], ["我不愿意为工作或学习离开家人。", "Wǒ bú yuànyì wèi gōngzuò huò xuéxí líkāi jiārén.", "Tôi không muốn vì công việc hay học hành mà xa gia đình.", "不愿意为工作或学习离开家人"]]},
+
+    {hz:"老张", py:"Lǎo Zhāng", pos:"danh từ riêng", vn:"anh Trương, bác Trương", hv:"LÃO TRƯƠNG", use:"Tên gọi thân mật: 老 + họ, dùng gọi đồng nghiệp lớn tuổi hơn hoặc quen biết lâu: 老张 · 老王 · 老李. Người trẻ hơn thì gọi 小 + họ: 小王. Cấp trên thì gọi họ + chức: 刘经理. Trong bài khoá: 你看见老张了吗？", tip:"老 LÃO (già, lâu năm, như 老师) + 张 TRƯƠNG (họ Trương): “bác Trương, anh Trương”. Không phải chê già — 老 ở đây là thân mật, kính trọng. Nhớ cặp 老张 / 小张 theo tuổi.",
+      ph:[["老张", "Lǎo Zhāng", "anh Trương, bác Trương"], ["老 + họ", "lǎo + xìng", "cách gọi thân mật người lớn tuổi hơn"]],
+      se:[["同乐，你看见老张了吗？", "Tónglè, nǐ kànjiàn Lǎo Zhāng le ma?", "Đồng Lạc, cậu có thấy anh Trương không?", "老张"], ["老张没来。他说家里有点儿事，所以请假了。", "Lǎo Zhāng méi lái. Tā shuō jiā li yǒudiǎnr shì, suǒyǐ qǐngjià le.", "Anh Trương không đến. Anh ấy bảo nhà có chút việc nên xin nghỉ rồi.", "老张没来"]]}
+  ]
+};
+
+/* ====================== phát âm ====================== */
+let zhVoice = null;
+function pickVoice(){
+  const vs = window.speechSynthesis ? speechSynthesis.getVoices() : [];
+  const zh = vs.filter(v => /^zh/i.test(v.lang));
+  zhVoice = zh.find(v => /CN|Hans|Chinese \(China\)|普通话|Mandarin/i.test(v.lang + v.name)) || zh[0] || null;
+}
+if (window.speechSynthesis){
+  pickVoice();
+  speechSynthesis.onvoiceschanged = pickVoice;
+}
+function speak(text, btn){
+  if (btn){
+    document.querySelectorAll('.spk.playing').forEach(b => b.classList.remove('playing'));
+    btn.classList.add('playing');
+    setTimeout(() => btn.classList.remove('playing'), 1400);
+  }
+  if (window.speechSynthesis && zhVoice){
+    speechSynthesis.cancel();
+    const u = new SpeechSynthesisUtterance(text);
+    u.voice = zhVoice; u.lang = zhVoice.lang; u.rate = 0.8;
+    speechSynthesis.speak(u);
+    return;
+  }
+  try{
+    const a = new Audio('https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=zh-CN&q=' + encodeURIComponent(text));
+    a.play().catch(() => {});
+  }catch(e){}
+}
+
+/* ====================== dựng thẻ ====================== */
+function esc(s){ return s.replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+
+const MARK = ['①','②','③','④','⑤'];
+
+function rows(list, hl){
+  return list.map((r, i) => {
+    let zh = esc(r[0]);
+    if (hl && r[3]){
+      const k = esc(r[3]);
+      zh = zh.replace(k, '<span class="hl">' + k + '</span>');
+    }
+    return `
+    <div class="item">
+      <button class="spk sm" data-say="${esc(r[0].replace(/[…]/g,''))}">🔊</button>
+      <div class="body">
+        <div class="zh han"><span class="idx">${MARK[i] || ''}</span>${zh}</div>
+        <div class="pz py">${esc(r[1])}</div>
+        <div class="vn2">${esc(r[2])}</div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function cardHTML(w, idx){
+  // mặt trước đổi theo chiều học
+  const front = (dir === 'zh')
+    ? `<div class="hz han">${esc(w.hz)}</div>
+       <button class="spk" data-say="${esc(w.hz)}" aria-label="Nghe đọc">🔊</button>`
+    : `<div class="vnfront">${esc(w.vn)}</div>`;
+
+  const st = marks[idx] || '';
+  const stCls = st ? ' st-' + st : '';
+  const pill = st
+    ? `<div class="state ${st}">${st === 'known' ? '✓ Đã thuộc' : '↻ Cần ôn thêm'}</div>`
+    : '';
+
+  return `
+  <div class="flip" data-i="${idx}">
+    <div class="inner">
+
+      <div class="face front${stCls}">
+        <div class="tag">${idx + 1}</div>
+        ${pill}
+        <div class="inner-front">${front}</div>
+        <div class="flipnote">chạm để lật ↻</div>
+      </div>
+
+      <div class="face back${stCls}">
+        <div class="tag">${idx + 1}</div>
+        <div class="pos">${esc(w.pos)}</div>
+
+        <div class="bhead">
+          <button class="spk" data-say="${esc(w.hz)}" aria-label="Nghe đọc">🔊</button>
+          <div>
+            <div class="hz han">${esc(w.hz)}</div>
+            <div class="pin py">${esc(w.py)}</div>
+          </div>
+        </div>
+
+        <div class="mean">
+          <div class="vn">${esc(w.vn)}</div>
+          <div class="hv">Hán Việt: ${esc(w.hv)}</div>
+        </div>
+
+        <div class="use">
+          <div class="ulab">Dùng khi nào</div>
+          <div class="utxt">${esc(w.use)}</div>
+        </div>
+
+        <div class="tip">
+          <div class="ulab">💡 Mẹo nhớ</div>
+          <div class="utxt">${esc(w.tip)}</div>
+        </div>
+
+        <div class="sec">
+          <h3>Cụm từ thường dùng</h3>
+          ${rows(w.ph, false)}
+        </div>
+
+        <div class="sec">
+          <h3>Câu ví dụ — theo thứ tự cụm từ ở trên</h3>
+          ${rows(w.se, true)}
+        </div>
+
+        <div class="acts">
+          <button class="ok${st === 'known' ? ' on' : ''}" data-mark="known">✓ Đã thuộc</button>
+          <button class="re${st === 'review' ? ' on' : ''}" data-mark="review">↻ Cần ôn thêm</button>
+        </div>
+        <div class="flipnote">chạm vào thẻ để lật lại ↺</div>
+      </div>
+
+    </div>
+  </div>`;
+}
+
+/* ====================== chiều cao thẻ lật ====================== */
+function fit(flipEl){
+  const inner = flipEl.querySelector('.inner');
+  const face = flipEl.querySelector(inner.classList.contains('flipped') ? '.back' : '.front');
+  inner.style.height = face.offsetHeight + 'px';
+}
+function fitAll(){ document.querySelectorAll('.flip').forEach(fit); }
+
+/* ====================== trạng thái ====================== */
+const stage = document.getElementById('stage');
+const nav = document.getElementById('nav');
+const progwrap = document.getElementById('progwrap');
+const countEl = document.getElementById('count');
+const progEl = document.getElementById('prog');
+
+const KEY = 'flashcard-hsk3-bai11';
+let marks = {};
+try{
+  const raw = localStorage.getItem(KEY);
+  if (raw) marks = JSON.parse(raw) || {};
+}catch(e){ marks = {}; }
+function save(){
+  try{ localStorage.setItem(KEY, JSON.stringify(marks)); }catch(e){}
+}
+
+let base = DATA.words.map((_, i) => i);
+let order = base.slice();
+let pos = 0;
+let mode = 'deck';
+let dir = 'zh';
+let filter = 'all';
+
+function applyFilter(){
+  order = base.filter(i => {
+    const m = marks[i];
+    if (filter === 'known')  return m === 'known';
+    if (filter === 'review') return m === 'review';
+    if (filter === 'new')    return !m;
+    return true;
+  });
+  if (pos >= order.length) pos = Math.max(0, order.length - 1);
+}
+
+function updateCounts(){
+  const vals = Object.values(marks);
+  const k = vals.filter(v => v === 'known').length;
+  const r = vals.filter(v => v === 'review').length;
+  const n = DATA.words.length - k - r;
+  document.getElementById('counts').innerHTML =
+    `<span class="cK">✓ Đã thuộc ${k}</span> · <span class="cR">↻ Cần ôn thêm ${r}</span> · Chưa phân loại ${n}`;
+}
+
+function mark(i, val){
+  if (marks[i] === val) delete marks[i]; else marks[i] = val;
+  save();
+  updateCounts();
+
+  const cur = order[pos];
+  applyFilter();
+
+  if (mode === 'grid'){ render(); return; }
+  if (order.length === 0){ render(); return; }
+
+  const at = order.indexOf(cur);
+  if (at === -1){ render(); }        // thẻ vừa phân loại đã bị bộ lọc ẩn đi
+  else { pos = at; go(1); }          // còn trong danh sách thì sang thẻ kế tiếp
+}
+
+function render(){
+  updateCounts();
+
+  if (order.length === 0){
+    stage.className = '';
+    stage.innerHTML = '<div class="empty">Không có thẻ nào trong mục này.</div>';
+    nav.classList.add('hidden');
+    progwrap.classList.add('hidden');
+    return;
+  }
+
+  if (mode === 'deck'){
+    stage.className = '';
+    stage.innerHTML = cardHTML(DATA.words[order[pos]], order[pos]);
+    nav.classList.remove('hidden');
+    progwrap.classList.remove('hidden');
+    countEl.textContent = (pos + 1) + ' / ' + order.length;
+    progEl.style.width = ((pos + 1) / order.length * 100) + '%';
+  } else {
+    stage.className = 'grid';
+    stage.innerHTML = order.map(i => cardHTML(DATA.words[i], i)).join('');
+    nav.classList.add('hidden');
+    progwrap.classList.add('hidden');
+  }
+  fitAll();
+  requestAnimationFrame(fitAll);
+}
+
+function go(d){
+  pos = (pos + d + order.length) % order.length;
+  render();
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+
+function flip(flipEl){
+  const inner = flipEl.querySelector('.inner');
+  inner.classList.toggle('flipped');
+  fit(flipEl);
+}
+
+/* ====================== sự kiện ====================== */
+stage.addEventListener('click', e => {
+  const sp = e.target.closest('.spk');
+  if (sp){ e.stopPropagation(); speak(sp.dataset.say, sp); return; }
+  const mk = e.target.closest('[data-mark]');
+  if (mk){
+    e.stopPropagation();
+    mark(parseInt(mk.closest('.flip').dataset.i, 10), mk.dataset.mark);
+    return;
+  }
+  const fl = e.target.closest('.flip');
+  if (fl) flip(fl);
+});
+
+document.getElementById('prev').onclick = () => go(-1);
+document.getElementById('next').onclick = () => go(1);
+
+document.getElementById('mode-deck').onclick = function(){
+  mode = 'deck'; this.classList.add('on');
+  document.getElementById('mode-grid').classList.remove('on');
+  render();
+};
+document.getElementById('mode-grid').onclick = function(){
+  mode = 'grid'; this.classList.add('on');
+  document.getElementById('mode-deck').classList.remove('on');
+  render();
+};
+document.getElementById('dir-zh').onclick = function(){
+  dir = 'zh'; this.classList.add('on');
+  document.getElementById('dir-vi').classList.remove('on');
+  render();
+};
+document.getElementById('dir-vi').onclick = function(){
+  dir = 'vi'; this.classList.add('on');
+  document.getElementById('dir-zh').classList.remove('on');
+  render();
+};
+document.getElementById('shuffle').onclick = () => {
+  for (let i = base.length - 1; i > 0; i--){
+    const j = Math.floor(Math.random() * (i + 1));
+    [base[i], base[j]] = [base[j], base[i]];
+  }
+  pos = 0; applyFilter(); render();
+};
+
+document.getElementById('reset').onclick = () => {
+  if (!Object.keys(marks).length) return;
+  if (!confirm('Xoá toàn bộ phân loại “đã thuộc / cần ôn thêm”?')) return;
+  marks = {}; save(); pos = 0; applyFilter(); render();
+};
+
+[['f-all','all'], ['f-new','new'], ['f-review','review'], ['f-known','known']].forEach(([id, val]) => {
+  document.getElementById(id).onclick = function(){
+    filter = val; pos = 0;
+    document.querySelectorAll('#f-all,#f-new,#f-review,#f-known').forEach(b => b.classList.remove('on'));
+    this.classList.add('on');
+    applyFilter(); render();
+  };
+});
+
+document.addEventListener('keydown', e => {
+  if (mode !== 'deck' || order.length === 0) return;
+  if (e.key === 'ArrowRight') go(1);
+  else if (e.key === 'ArrowLeft') go(-1);
+  else if (e.key === '1') mark(order[pos], 'known');
+  else if (e.key === '2') mark(order[pos], 'review');
+  else if (e.key === ' ' || e.key === 'Enter'){
+    e.preventDefault();
+    const fl = document.querySelector('.flip');
+    if (fl) flip(fl);
+  }
+});
+
+window.addEventListener('resize', fitAll);
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitAll);
+window.addEventListener('load', fitAll);
+
+render();
+</script>
+<!-- CHAY-NET:dau -->
+<script src="../assets/chay-net.js" defer></script>
+<!-- CHAY-NET:cuoi -->
+</body>
+</html>

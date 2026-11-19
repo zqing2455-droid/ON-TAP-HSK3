@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="fc-key" content="flashcard-hsk3-bai09">
+<meta name="fc-han" content="打不好没关系">
+<meta name="fc-total" content="28">
+<meta name="fc-sub" content="26 từ mới + 2 danh từ riêng">
+<meta name="fc-lesson" content="9">
+<title>Flashcard từ vựng · HSK3 Bài 9</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@600;700;900&family=Quicksand:wght@500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F6F4EC; --ink:#26221A; --soft:#7A6E64;
+  --accent:#E3963B; --rose:#C2697A; --green:#4F7E62; --blue:#4A7398;
+  --card:#FFFDF7; --line:#E4DCCB;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  background:var(--paper); color:var(--ink);
+  font-family:'Quicksand',sans-serif; font-weight:600;
+  padding:18px 14px 80px; line-height:1.5;
+}
+.wrap{max-width:720px;margin:0 auto}
+.backlink{font-size:.85rem;margin-bottom:10px}
+.backlink a{color:var(--soft);text-decoration:none;font-weight:700}
+.backlink a:hover{color:var(--ink)}
+.han{font-family:'Noto Serif SC',serif}
+.py{font-family:'Space Mono',monospace}
+
+/* ---------- đầu trang ---------- */
+header{text-align:center;margin-bottom:14px}
+header .kicker{font-size:.78rem;letter-spacing:2px;text-transform:uppercase;color:var(--accent);font-weight:800}
+header h1{font-size:1.45rem;font-weight:800;letter-spacing:-.3px;margin-top:4px}
+header h1 .han{color:var(--rose)}
+header p{color:var(--soft);font-size:.9rem;margin-top:4px}
+
+/* ---------- thanh điều khiển ---------- */
+.bar{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:14px 0}
+.bar + .bar{margin-top:0}
+.btn{
+  font-family:inherit;font-weight:700;font-size:.88rem;cursor:pointer;
+  background:var(--card);color:var(--soft);border:1.5px solid var(--line);
+  border-radius:999px;padding:9px 15px;min-height:42px;transition:.15s;
+}
+.btn:hover{color:var(--ink);border-color:var(--soft)}
+.btn.on{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+
+/* ---------- thẻ lật ---------- */
+.flip{perspective:1600px;margin-bottom:16px}
+.inner{
+  position:relative;width:100%;
+  transform-style:preserve-3d;
+  transition:transform .6s cubic-bezier(.4,.1,.3,1), height .35s ease;
+}
+.inner.flipped{transform:rotateY(180deg)}
+.face{
+  position:absolute;top:0;left:0;width:100%;
+  -webkit-backface-visibility:hidden;backface-visibility:hidden;
+  background:var(--card);border:1.5px solid var(--line);border-radius:22px;
+  box-shadow:0 3px 0 var(--line);
+  padding:20px 18px;cursor:pointer;
+}
+.face.back{transform:rotateY(180deg)}
+
+/* --- mặt trước --- */
+.front .inner-front{
+  min-height:270px;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;text-align:center;gap:6px;
+}
+.front .hz{font-family:'Noto Serif SC',serif;font-weight:900;font-size:4.6rem;line-height:1.1;color:var(--rose)}
+.front .vnfront{font-size:1.75rem;font-weight:800;line-height:1.3;max-width:420px}
+
+.tag{
+  position:absolute;top:16px;left:16px;
+  width:30px;height:30px;border-radius:50%;
+  background:#F3E7D5;color:var(--accent);
+  font-size:.82rem;font-weight:800;
+  display:flex;align-items:center;justify-content:center;
+}
+.pos{
+  position:absolute;top:16px;right:16px;
+  font-size:.7rem;font-weight:800;letter-spacing:.4px;
+  color:#fff;background:var(--blue);border-radius:999px;padding:4px 10px;
+}
+.flipnote{
+  position:absolute;left:0;right:0;bottom:12px;text-align:center;
+  font-size:.74rem;color:var(--soft);opacity:.75;
+}
+.back .flipnote{position:static;margin-top:10px}
+
+/* ---------- phân loại ---------- */
+.state{
+  position:absolute;top:16px;right:16px;
+  font-size:.7rem;font-weight:800;border-radius:999px;padding:4px 10px;
+}
+.state.known{background:#E4EFE7;color:var(--green)}
+.state.review{background:#FAEBD5;color:#B0751E}
+.face.st-known{border-color:var(--green)}
+.face.st-review{border-color:var(--accent)}
+
+.acts{display:flex;gap:8px;margin-top:16px}
+.acts button{
+  flex:1 1 0;font-family:inherit;font-weight:800;font-size:.86rem;cursor:pointer;
+  border-radius:999px;padding:11px 8px;min-height:46px;
+  border:1.5px solid var(--line);background:var(--card);color:var(--soft);transition:.15s;
+}
+.acts button:hover{border-color:var(--soft);color:var(--ink)}
+.acts .ok.on{background:var(--green);border-color:var(--green);color:#fff}
+.acts .re.on{background:var(--accent);border-color:var(--accent);color:#fff}
+
+.counts{text-align:center;font-size:.82rem;color:var(--soft);margin:2px 0 14px}
+.counts .cK{color:var(--green);font-weight:800}
+.counts .cR{color:#B0751E;font-weight:800}
+.empty{
+  text-align:center;color:var(--soft);font-weight:700;
+  background:var(--card);border:1.5px dashed var(--line);border-radius:22px;padding:46px 20px;
+}
+
+/* --- mặt sau --- */
+.bhead{display:flex;align-items:center;gap:12px;margin:30px 0 4px}
+.bhead .hz{font-family:'Noto Serif SC',serif;font-weight:900;font-size:2.1rem;color:var(--rose);line-height:1.2}
+.bhead .pin{font-family:'Space Mono',monospace;font-size:.92rem;color:var(--soft)}
+.bhead .vnb{font-size:1.3rem;font-weight:800;line-height:1.3}
+
+.mean{
+  margin:10px 0 2px;
+  background:#FBF3E8;border:1.5px dashed var(--line);border-radius:14px;padding:10px 12px;
+}
+.mean .vn{font-size:1.12rem;font-weight:800;color:var(--ink)}
+.mean .hv{font-size:.72rem;font-weight:800;letter-spacing:1px;color:var(--accent);text-transform:uppercase;margin-top:3px}
+
+.use{
+  margin-top:10px;border-left:4px solid var(--green);
+  background:#F1F5F1;border-radius:0 12px 12px 0;padding:9px 12px;
+}
+.use .ulab{
+  font-size:.68rem;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;
+  color:var(--green);margin-bottom:2px;
+}
+.use .utxt{font-size:.9rem;font-weight:600;line-height:1.55}
+
+.tip{
+  margin-top:8px;border-left:4px solid var(--rose);
+  background:#FAF1F2;border-radius:0 12px 12px 0;padding:9px 12px;
+}
+.tip .ulab{
+  font-size:.68rem;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;
+  color:var(--rose);margin-bottom:2px;
+}
+.tip .utxt{font-size:.9rem;font-weight:600;line-height:1.55}
+
+.sec{margin-top:14px}
+.sec h3{
+  font-size:.7rem;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;
+  color:var(--soft);border-bottom:1.5px solid var(--line);padding-bottom:5px;margin-bottom:8px;
+}
+.item{display:flex;gap:10px;align-items:flex-start;padding:6px 0}
+.item + .item{border-top:1px dashed var(--line)}
+.item .body{flex:1 1 auto;min-width:0}
+.item .zh{font-family:'Noto Serif SC',serif;font-weight:700;font-size:1.18rem;line-height:1.35}
+.item .pz{font-family:'Space Mono',monospace;font-size:.74rem;color:var(--soft);margin-top:1px}
+.item .vn2{font-size:.9rem;color:var(--green);font-weight:700;margin-top:2px}
+.item .idx{font-family:'Quicksand',sans-serif;font-size:.8rem;color:var(--soft);margin-right:6px}
+.item .hl{color:var(--rose)}
+
+/* --- nút loa --- */
+.spk{
+  display:inline-flex;align-items:center;justify-content:center;
+  background:none;border:1.5px solid var(--line);border-radius:999px;
+  width:44px;height:44px;cursor:pointer;color:var(--accent);font-size:1.1rem;
+  transition:.15s;flex:0 0 auto;
+}
+.spk:hover{background:#F9F1E4;border-color:var(--accent)}
+.spk.sm{width:30px;height:30px;font-size:.8rem;margin-top:2px}
+.spk.playing{background:var(--accent);color:#fff;border-color:var(--accent)}
+
+/* ---------- điều hướng ---------- */
+.nav{display:flex;align-items:center;justify-content:center;gap:12px;margin-top:4px}
+.nav .arrow{
+  width:52px;height:52px;border-radius:50%;font-size:1.3rem;
+  background:var(--card);border:1.5px solid var(--line);color:var(--ink);
+  cursor:pointer;font-family:inherit;
+}
+.nav .arrow:hover{border-color:var(--soft)}
+.count{font-family:'Space Mono',monospace;font-size:.95rem;color:var(--soft);min-width:72px;text-align:center}
+.prog{height:6px;background:var(--line);border-radius:99px;margin-top:14px;overflow:hidden}
+.prog i{display:block;height:100%;background:var(--accent);border-radius:99px;transition:width .25s}
+
+.hint{text-align:center;color:var(--soft);font-size:.78rem;margin-top:16px;line-height:1.75}
+.hidden{display:none}
+
+/* ---------- chế độ xem tất cả ---------- */
+#stage.grid .flip{margin-bottom:14px}
+#stage.grid .front .inner-front{min-height:190px}
+#stage.grid .front .hz{font-size:3rem}
+#stage.grid .front .vnfront{font-size:1.3rem}
+
+@media(max-width:480px){
+  .front .hz{font-size:3.3rem}
+  .front .vnfront{font-size:1.45rem}
+  .item .zh{font-size:1.1rem}
+  .pos{font-size:.66rem;padding:3px 9px}
+}
+</style>
+<!-- MAM-XANH:dau -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Nunito:wght@500;600;700;800&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/giao-dien.css">
+<!-- MAM-XANH:cuoi -->
+
+</head>
+<body>
+<div class="wrap">
+
+  <p class="backlink"><a href="./">← Danh sách flashcard</a></p>
+
+  <header>
+    <div class="kicker">新HSK教程 3 · Bài 9</div>
+    <h1><span class="han">打不好没关系</span></h1>
+    <p>Flashcard từ vựng — 26 từ mới + 2 danh từ riêng</p>
+  </header>
+
+  <div class="bar">
+    <button class="btn on" id="dir-zh">汉字 → Việt</button>
+    <button class="btn" id="dir-vi">Việt → 汉字</button>
+  </div>
+  <div class="bar">
+    <button class="btn on" id="mode-deck">Lật từng thẻ</button>
+    <button class="btn" id="mode-grid">Xem tất cả</button>
+    <button class="btn" id="shuffle">Trộn thẻ</button>
+    <button class="btn" id="reset">Xoá phân loại</button>
+  </div>
+  <div class="bar">
+    <button class="btn on" id="f-all">Tất cả</button>
+    <button class="btn" id="f-new">Chưa phân loại</button>
+    <button class="btn" id="f-review">Cần ôn thêm</button>
+    <button class="btn" id="f-known">Đã thuộc</button>
+  </div>
+
+  <div class="counts" id="counts"></div>
+
+  <div id="stage"></div>
+
+  <div class="nav" id="nav">
+    <button class="arrow" id="prev" aria-label="Thẻ trước">‹</button>
+    <div class="count" id="count">1 / 28</div>
+    <button class="arrow" id="next" aria-label="Thẻ sau">›</button>
+  </div>
+  <div class="prog" id="progwrap"><i id="prog" style="width:4%"></i></div>
+
+  <p class="hint">
+    Chạm vào thẻ để lật · nhấn 🔊 để nghe đọc · lật xong thì chọn “Đã thuộc” hoặc “Cần ôn thêm”<br>
+    Bàn phím: ← → đổi thẻ · phím cách lật thẻ · phím 1 đã thuộc · phím 2 cần ôn thêm<br>
+    Phân loại được lưu lại trên máy, lần sau mở vẫn còn
+  </p>
+
+</div>
+
+<script>
+const DATA = {
+  lesson: 9,
+  words: [
+    {hz:"校园", py:"xiàoyuán", pos:"danh từ · n.", vn:"khuôn viên trường", hv:"HIỆU VIÊN", use:"Dùng khi nói không gian bên trong trường học: 校园里、大学校园、校园很大; 校园卡 là thẻ sinh viên. Khác 学校 (trường — tổ chức): 校园 là khu đất, sân vườn của trường.", tip:"校 (木 gỗ + 交 giao nhau: rào gỗ đan chéo quanh nơi học — TRƯỜNG, 学校) + 园 (囗 tường bao + 元: khu đất có tường bao quanh — VƯỜN, 花园 Bài 3): khuôn viên trường.",
+      ph:[["校园里", "xiàoyuán lǐ", "trong khuôn viên trường"], ["校园卡", "xiàoyuán kǎ", "thẻ sinh viên"]],
+      se:[["校园很大，我带你走走吧。", "Xiàoyuán hěn dà, wǒ dài nǐ zǒuzou ba.", "Khuôn viên trường rộng lắm, để tớ dẫn cậu đi một vòng.", "校园很大"], ["我昨天忘了还你校园卡了。", "Wǒ zuótiān wàng le huán nǐ xiàoyuán kǎ le.", "Hôm qua tớ quên trả cậu thẻ sinh viên.", "校园卡"]]},
+
+    {hz:"卡", py:"kǎ", pos:"danh từ · n.", vn:"thẻ", hv:"CA", use:"Dùng khi nói các loại thẻ: 校园卡 (thẻ sinh viên)、银行卡 (thẻ ngân hàng)、信用卡 (Bài 3); quẹt thẻ là 刷卡 (Bài 6): 我可以刷卡吗？⚠ Lượng từ là 张: 一张卡、几张卡.", tip:"上 + 下 ghép lại: kẹt giữa trên và dưới; đọc kǎ là mượn phiên âm “card” — THẺ. Từ 信用卡 (Bài 3) → 校园卡.",
+      ph:[["校园卡", "xiàoyuán kǎ", "thẻ sinh viên"], ["一张卡", "yì zhāng kǎ", "một chiếc thẻ"]],
+      se:[["我昨天忘了还你校园卡了。", "Wǒ zuótiān wàng le huán nǐ xiàoyuán kǎ le.", "Hôm qua tớ quên trả cậu thẻ sinh viên.", "校园卡"], ["钱包里有几张卡？", "Qiánbāo lǐ yǒu jǐ zhāng kǎ?", "Trong ví có mấy chiếc thẻ?", "几张卡"]]},
+
+    {hz:"球场", py:"qiúchǎng", pos:"danh từ · n.", vn:"sân bóng", hv:"CẦU TRƯỜNG", use:"Dùng khi nói sân chơi bóng: 在球场打球、学校的球场. Trong bài: 我正在球场打球呢 (tớ đang chơi bóng ở sân). Thêm môn phía trước: 足球场、网球场.", tip:"球 (王 ngọc + 求 cầu: viên ngọc tròn ai cũng mong — BÓNG, 足球) + 场 (土 đất + phần phải là nắng chiếu: bãi đất trống ngập nắng — SÂN, BÃI, 机场): sân bóng.",
+      ph:[["在球场", "zài qiúchǎng", "ở sân bóng"], ["学校的球场", "xuéxiào de qiúchǎng", "sân bóng của trường"]],
+      se:[["我正在球场打球呢，接了你的电话就跑过来了。", "Wǒ zhèngzài qiúchǎng dǎ qiú ne, jiē le nǐ de diànhuà jiù pǎo guòlái le.", "Tớ đang chơi bóng ở sân, nghe điện thoại cậu xong là chạy sang luôn.", "在球场打球"], ["学校的球场上，每天都有很多同学在那儿做运动。", "Xuéxiào de qiúchǎng shang, měi tiān dōu yǒu hěn duō tóngxué zài nàr zuò yùndòng.", "Trên sân bóng của trường, ngày nào cũng có nhiều bạn tập thể thao ở đó.", "学校的球场"]]},
+
+    {hz:"练", py:"liàn", pos:"động từ · v.", vn:"luyện, tập", hv:"LUYỆN", use:"Dùng khi tập một kỹ năng, có tân ngữ ngắn: 练球、练字; lặp lại cho nhẹ: 练练; tự tập: 自己练练. Trong bài: 每天都练球 · 我先自己练练吧 · 跟我们一起练。", tip:"纟 (sợi tơ) + phần phải: luộc tơ đi luộc lại cho mềm — LUYỆN, tập đi tập lại. Phần phải gần giống 东 nhưng nét giữa khác, cả chữ 8 nét. LUYỆN như “rèn luyện”.",
+      ph:[["练球", "liàn qiú", "tập bóng"], ["自己练练", "zìjǐ liànlian", "tự tập một chút"]],
+      se:[["听说为了准备运动会，你们几个男生每天都练球。", "Tīngshuō wèile zhǔnbèi yùndònghuì, nǐmen jǐ ge nánshēng měi tiān dōu liàn qiú.", "Nghe nói để chuẩn bị hội thao, mấy bạn nam các cậu ngày nào cũng tập bóng.", "每天都练球"], ["我先自己练练吧，下周再跟你们一起打。", "Wǒ xiān zìjǐ liànlian ba, xià zhōu zài gēn nǐmen yìqǐ dǎ.", "Thôi tớ tự tập trước đã, tuần sau chơi với các cậu.", "自己练练"]]},
+
+    {hz:"练习", py:"liànxí", pos:"động từ / danh từ", vn:"luyện tập; bài tập", hv:"LUYỆN TẬP", use:"Dùng khi LUYỆN một kỹ năng đều đặn để giỏi lên: 练习 + kỹ năng (练习说汉语、练习口语、练习写汉字)、一直在练习; danh từ: 做练习. ⚠ Ôn bài cũ trước khi thi → 复习, không dùng 练习.", tip:"练 (纟 tơ: luộc tơ đi luộc lại cho mềm — LUYỆN) + 习 (hình cánh chim non vỗ cánh tập bay — TẬP, 学习 · 习惯 Bài 8). LUYỆN TẬP đọc y tiếng Việt.",
+      ph:[["一直在练习", "yìzhí zài liànxí", "luyện suốt"], ["练习口语", "liànxí kǒuyǔ", "luyện khẩu ngữ"]],
+      se:[["我想参加网球比赛，最近一直在练习。", "Wǒ xiǎng cānjiā wǎngqiú bǐsài, zuìjìn yìzhí zài liànxí.", "Tớ muốn thi tennis, dạo này cứ luyện suốt.", "一直在练习"], ["我每天练习说汉语半个小时。", "Wǒ měi tiān liànxí shuō Hànyǔ bàn ge xiǎoshí.", "Ngày nào tôi cũng luyện nói tiếng Trung nửa tiếng.", "练习说汉语"]]},
+
+    {hz:"网球", py:"wǎngqiú", pos:"danh từ · n.", vn:"quần vợt, tennis", hv:"VÕNG CẦU", use:"Dùng khi nói môn quần vợt: 打网球、网球比赛. Trong bài: 我想参加网球比赛 (tớ muốn thi tennis). Bóng đánh bằng vợt, bằng tay dùng 打.", tip:"网 (hình tấm lưới đánh cá — LƯỚI, MẠNG; 网上) + 球 (王 ngọc + 求 cầu: viên ngọc tròn — BÓNG): bóng đánh qua lưới = tennis. VÕNG CẦU: “võng” là lưới.",
+      ph:[["打网球", "dǎ wǎngqiú", "chơi tennis"], ["网球比赛", "wǎngqiú bǐsài", "giải tennis"]],
+      se:[["受到我爸爸的影响，我十几岁就开始打网球了。", "Shòudào wǒ bàba de yǐngxiǎng, wǒ shí jǐ suì jiù kāishǐ dǎ wǎngqiú le.", "Chịu ảnh hưởng của bố, tôi mười mấy tuổi đã bắt đầu chơi tennis.", "打网球"], ["我想参加网球比赛，最近一直在练习。", "Wǒ xiǎng cānjiā wǎngqiú bǐsài, zuìjìn yìzhí zài liànxí.", "Tớ muốn thi tennis, dạo này cứ luyện suốt.", "网球比赛"]]},
+
+    {hz:"比赛", py:"bǐsài", pos:"danh từ / động từ", vn:"trận đấu, cuộc thi; thi đấu", hv:"TỶ TÁI", use:"Dùng khi nói một TRẬN đấu, cuộc thi (thể thao, ca hát…): 参加比赛、看比赛、足球比赛、网球比赛、汉语比赛、比赛开始了. Trận quan trọng: 这么重要的比赛.", tip:"比 (hai người đứng cạnh nhau để SO, 比 HSK2) + 赛 (mái nhà, giữa như hai tay nâng, dưới 贝 tiền: góp tiền thưởng để thi xem ai hơn — THI ĐẤU; 14 nét): so tài.",
+      ph:[["参加比赛", "cānjiā bǐsài", "tham gia thi đấu"], ["看比赛", "kàn bǐsài", "xem thi đấu"]],
+      se:[["我想参加网球比赛，最近一直在练习。", "Wǒ xiǎng cānjiā wǎngqiú bǐsài, zuìjìn yìzhí zài liànxí.", "Tớ muốn thi tennis, dạo này cứ luyện suốt.", "参加网球比赛"], ["好，到时候我去看你的比赛。", "Hǎo, dào shíhou wǒ qù kàn nǐ de bǐsài.", "Hay đấy, đến hôm đó tớ đi xem cậu thi.", "看你的比赛"]]},
+
+    {hz:"参加", py:"cānjiā", pos:"động từ · v.", vn:"tham gia, tham dự", hv:"THAM GIA", use:"Dùng khi THAM GIA một hoạt động, sự kiện, trận đấu: 参加 + 比赛 / 运动会 / 活动 / 考试 (参加HSK考试). ⚠ Đi học lớp tiếng Trung → 上汉语课, không nói ✗参加汉语课.", tip:"参 (厶 trên 大, dưới 彡 ba tia: ba ngôi sao trên đầu người — góp mặt, THAM gia; đọc cān) + 加 (力 sức + 口 miệng: vừa ra sức vừa hô — THÊM vào). THAM GIA đọc y tiếng Việt.",
+      ph:[["参加比赛", "cānjiā bǐsài", "tham gia thi đấu"], ["参加考试", "cānjiā kǎoshì", "dự thi"]],
+      se:[["你打算参加运动会吗？", "Nǐ dǎsuàn cānjiā yùndònghuì ma?", "Cậu có định tham gia hội thao không?", "参加运动会"], ["今年参加HSK考试吗？", "Jīnnián cānjiā HSK kǎoshì ma?", "Năm nay có dự thi HSK không?", "参加HSK考试"]]},
+
+    {hz:"运动会", py:"yùndònghuì", pos:"danh từ · n.", vn:"đại hội thể thao, hội thao", hv:"VẬN ĐỘNG HỘI", use:"Dùng khi nói hội thao của trường, công ty: 准备运动会、参加运动会、学校的运动会. Trong bài: 为了准备运动会，你们几个男生每天都练球。Thế vận hội là 奥运会.", tip:"运 (辶 đi + 云 mây: mây trôi đi — VẬN) + 动 (云 + 力 sức: dùng sức làm cho chuyển — ĐỘNG; 运动 HSK2) + 会 (người tụ lại dưới một mái — HỘI, 音乐会 Bài 5).",
+      ph:[["准备运动会", "zhǔnbèi yùndònghuì", "chuẩn bị hội thao"], ["参加运动会", "cānjiā yùndònghuì", "tham gia hội thao"]],
+      se:[["听说为了准备运动会，你们几个男生每天都练球。", "Tīngshuō wèile zhǔnbèi yùndònghuì, nǐmen jǐ ge nánshēng měi tiān dōu liàn qiú.", "Nghe nói để chuẩn bị hội thao, mấy bạn nam các cậu ngày nào cũng tập bóng.", "准备运动会"], ["你打算参加运动会吗？", "Nǐ dǎsuàn cānjiā yùndònghuì ma?", "Cậu có định tham gia hội thao không?", "参加运动会"]]},
+
+    {hz:"男生", py:"nánshēng", pos:"danh từ · n.", vn:"nam sinh, con trai (trong lớp)", hv:"NAM SINH", use:"Dùng khi nói bạn nam là học sinh, sinh viên: 几个男生、男生和女生. Trong bài: 你们几个男生每天都练球。⚠ Người lớn đi làm thì nói 男人 / 男的.", tip:"男 (田 ruộng + 力 sức: người ra ruộng dùng sức — NAM, 男朋友) + 生 (mầm cây nhú lên khỏi mặt đất — SINH; người học — 学生). Cặp 男生 ↔ 女生.",
+      ph:[["几个男生", "jǐ ge nánshēng", "mấy bạn nam"], ["男生和女生", "nánshēng hé nǚshēng", "bạn nam và bạn nữ"]],
+      se:[["你们几个男生每天都练球。", "Nǐmen jǐ ge nánshēng měi tiān dōu liàn qiú.", "Mấy bạn nam các cậu ngày nào cũng tập bóng.", "几个男生"], ["我们班男生和女生一样多。", "Wǒmen bān nánshēng hé nǚshēng yíyàng duō.", "Lớp tôi bạn nam và bạn nữ nhiều như nhau.", "男生和女生"]]},
+
+    {hz:"为了", py:"wèile", pos:"giới từ · prep.", vn:"để, vì (mục đích)", hv:"VỊ LIỄU", use:"Dùng khi nói MỤC ĐÍCH muốn đạt tới: 为了 + mục đích，hành động (为了身体健康，我每天跑步); vế 为了 đứng sau thì thêm 是: ……，是为了……. ⚠ Không đi với 所以; nguyên nhân đã có sẵn → 因为.", tip:"为 (hai chấm như giọt mồ hôi của người đang làm lụng — LÀM, VÌ; 为什么 → 为了, đều đọc wèi) + 了 (hình đứa bé bó kín tay chân, đọc le). Nhớ: 为了 nhìn về mục đích, 因为 nhìn về nguyên nhân.",
+      ph:[["为了准备运动会", "wèile zhǔnbèi yùndònghuì", "để chuẩn bị hội thao"], ["为了健康", "wèile jiànkāng", "vì sức khoẻ"]],
+      se:[["听说为了准备运动会，你们几个男生每天都练球。", "Tīngshuō wèile zhǔnbèi yùndònghuì, nǐmen jǐ ge nánshēng měi tiān dōu liàn qiú.", "Nghe nói để chuẩn bị hội thao, mấy bạn nam các cậu ngày nào cũng tập bóng.", "为了准备运动会"], ["为了身体健康，我每天跑步。", "Wèile shēntǐ jiànkāng, wǒ měi tiān pǎobù.", "Vì sức khoẻ, ngày nào tôi cũng chạy bộ.", "为了身体健康"]]},
+
+    {hz:"好多", py:"hǎoduō", pos:"số từ · num.", vn:"rất nhiều, bao nhiêu là", hv:"HẢO ĐA", use:"Khẩu ngữ, 好多 + N ≈ 很多: 好多年、好多老球员. Trong bài: 我好多年没打羽毛球了 (bao nhiêu năm không đánh cầu lông). ⚠ 好 ở đây nghĩa là “rất”, như 好久不见.", tip:"好 (女 mẹ + 子 con: mẹ bế con là TỐT; ở đây nghĩa “rất”) + 多 (hai miếng thịt chồng lên nhau — NHIỀU): rất nhiều. HẢO ĐA — “hảo” như trong 好久 (rất lâu).",
+      ph:[["好多年", "hǎoduō nián", "bao nhiêu năm"], ["好多老球员", "hǎoduō lǎo qiúyuán", "nhiều cầu thủ cũ"]],
+      se:[["我好多年没打羽毛球了，几乎忘了怎么打了。", "Wǒ hǎoduō nián méi dǎ yǔmáoqiú le, jīhū wàng le zěnme dǎ le.", "Bao nhiêu năm rồi tớ không đánh cầu lông, gần như quên cách đánh rồi.", "好多年"], ["我觉得主要是因为好多老球员病了。", "Wǒ juéde zhǔyào shì yīnwèi hǎoduō lǎo qiúyuán bìng le.", "Tôi thấy chủ yếu là vì nhiều cầu thủ cũ bị ốm.", "好多老球员"]]},
+
+    {hz:"几乎", py:"jīhū", pos:"phó từ · adv.", vn:"gần như, hầu như", hv:"KỶ HỒ", use:"Dùng khi nói một việc GẦN NHƯ xảy ra hoặc gần như toàn bộ: 几乎 + V / phủ định — 几乎忘了、几乎每天都……、几乎没有. ⚠ Trước con số dùng 差不多 (Bài 8): 差不多两年, không nói ✗几乎两年.", tip:"几 (hình cái bàn nhỏ thấp — MẤY; ở đây đọc jī) + 乎 (hình hơi thở thoát ra trên miệng — trợ từ; có nét phẩy trên đầu, khác 平): 几乎 = gần như. Cặp: 几乎 + động từ, 差不多 + con số.",
+      ph:[["几乎忘了", "jīhū wàng le", "gần như quên mất"], ["几乎每天", "jīhū měi tiān", "hầu như mỗi ngày"]],
+      se:[["我好多年没打羽毛球了，几乎忘了怎么打了。", "Wǒ hǎoduō nián méi dǎ yǔmáoqiú le, jīhū wàng le zěnme dǎ le.", "Bao nhiêu năm rồi tớ không đánh cầu lông, gần như quên cách đánh rồi.", "几乎忘了"], ["我几乎每天都自己做饭。", "Wǒ jīhū měi tiān dōu zìjǐ zuò fàn.", "Hầu như ngày nào tôi cũng tự nấu cơm.", "几乎每天"]]},
+
+    {hz:"只是", py:"zhǐshì", pos:"phó từ / liên từ", vn:"chỉ là; có điều", hv:"CHỈ THỊ", use:"Dùng khi GIẢM NHẸ, giải thích “chỉ là …”: 只是 + V / cụm (只是为了锻炼身体、只是喜欢中国文化); đầu vế sau nghĩa “có điều”: 我没生气，只是有点儿累. ⚠ “Chỉ có ai / cái gì” → 只有.", tip:"只 (口 miệng + 八: mở miệng chỉ nói một câu — CHỈ, đọc zhǐ) + 是 (日 mặt trời + 正 ngay thẳng — ĐÚNG, LÀ): chỉ là. Nhớ cặp: 只是 = chỉ là (giảm nhẹ), 只有 = chỉ có.",
+      ph:[["只是为了锻炼", "zhǐshì wèile duànliàn", "chỉ là để rèn luyện"], ["只是开玩笑", "zhǐshì kāi wánxiào", "chỉ là đùa thôi"]],
+      se:[["你想得太多了！大家打球只是为了锻炼身体。", "Nǐ xiǎng de tài duō le! Dàjiā dǎ qiú zhǐshì wèile duànliàn shēntǐ.", "Cậu nghĩ nhiều quá! Mọi người chơi bóng chỉ là để rèn luyện sức khoẻ thôi.", "只是为了锻炼身体"], ["我没生气，只是有点儿累。", "Wǒ méi shēngqì, zhǐshì yǒudiǎnr lèi.", "Tôi không giận, chỉ là hơi mệt thôi.", "只是有点儿累"]]},
+
+    {hz:"啤酒", py:"píjiǔ", pos:"danh từ · n.", vn:"bia", hv:"TỲ TỬU", use:"Dùng khi nói bia (xem bóng đá, ăn nhậu): 一瓶啤酒、喝啤酒、冰啤酒 (bia lạnh). Trong bài: 冰箱里有啤酒和饮料 (trong tủ lạnh có bia và nước ngọt).", tip:"啤 (口 miệng + 卑 bēi gợi âm: đồ uống phiên âm “beer” — BIA; 卑 có nét phẩy trên 田) + 酒 (氵 nước + 酉 cái hũ: nước ủ trong hũ — RƯỢU, 酒店 HSK2). TỲ TỬU: “tửu” là rượu.",
+      ph:[["冰啤酒", "bīng píjiǔ", "bia lạnh"], ["喝啤酒", "hē píjiǔ", "uống bia"]],
+      se:[["你们先看，冰箱里有啤酒和饮料，我去拿一下。", "Nǐmen xiān kàn, bīngxiāng lǐ yǒu píjiǔ hé yǐnliào, wǒ qù ná yíxià.", "Các cậu xem trước đi, trong tủ lạnh có bia với nước ngọt, tớ đi lấy.", "啤酒和饮料"], ["冰箱里有啤酒，你自己拿吧。", "Bīngxiāng lǐ yǒu píjiǔ, nǐ zìjǐ ná ba.", "Trong tủ lạnh có bia, cậu tự lấy nhé.", "有啤酒"]]},
+
+    {hz:"回", py:"huí", pos:"lượng từ · m.", vn:"lần, chuyện (lượng từ)", hv:"HỒI", use:"Lượng từ chỉ chuyện, lần (khẩu ngữ): 怎么回事？(chuyện gì thế)、这回 (lần này). Trong bài: 今天怎么回事？总是踢不进去！⚠ 回 ở HSK1 là động từ “về” (回家); nay thêm nghĩa lượng từ.", tip:"Hai vòng xoáy lồng nhau — QUAY VỀ (回家); nay làm lượng từ “chuyện”: 怎么回事. HỒI như “hồi thứ nhất” trong truyện: một hồi = một chuyện.",
+      ph:[["怎么回事", "zěnme huí shì", "chuyện gì thế"], ["这回", "zhè huí", "lần này"]],
+      se:[["今天怎么回事？总是踢不进去！", "Jīntiān zěnme huí shì? Zǒngshì tī bu jìnqù!", "Hôm nay làm sao thế không biết? Sút mãi không vào!", "怎么回事"], ["这回我一定好好练习。", "Zhè huí wǒ yídìng hǎohāo liànxí.", "Lần này tôi nhất định luyện tập cho tốt.", "这回"]]},
+
+    {hz:"紧张", py:"jǐnzhāng", pos:"tính từ · adj.", vn:"căng thẳng, hồi hộp", hv:"KHẨN TRƯƠNG", use:"Dùng khi HỒI HỘP, run (thi, phỏng vấn, thi đấu): 很紧张、太紧张了、考试的时候紧张; trấn an: 别紧张！⚠ Tiếng Việt “khẩn trương” = nhanh lên — KHÁC hẳn nghĩa tiếng Trung, đừng dịch theo âm.", tip:"紧 (trên là tay, dưới 糸 sợi tơ đứng: tay xoắn chặt sợi tơ — CHẶT, CĂNG) + 张 (弓 cung + 长 dài: kéo dây cung dài ra — GIƯƠNG, căng; 一张 Bài 2): căng như dây cung. Âm KHẨN TRƯƠNG là bẫy.",
+      ph:[["别紧张", "bié jǐnzhāng", "đừng hồi hộp"], ["太紧张了", "tài jǐnzhāng le", "hồi hộp quá"]],
+      se:[["别紧张，你一定唱得很好！", "Bié jǐnzhāng, nǐ yídìng chàng de hěn hǎo!", "Đừng hồi hộp, cậu nhất định hát hay!", "别紧张"], ["新球员第一次参加这么重要的比赛，太紧张了。", "Xīn qiúyuán dì yī cì cānjiā zhème zhòngyào de bǐsài, tài jǐnzhāng le.", "Cầu thủ mới lần đầu đá trận quan trọng thế này, run quá.", "太紧张了"]]},
+
+    {hz:"主要", py:"zhǔyào", pos:"tính từ · adj.", vn:"chính, chủ yếu", hv:"CHỦ YẾU", use:"Dùng khi nói cái CHÍNH, quan trọng nhất trong nhiều cái: 主要的 + N (主要的球员)、主要是…… (chủ yếu là …)、主要是因为…… (chủ yếu là vì …)、主要是为了…….", tip:"主 (ngọn đèn có chấm lửa trên đỉnh — người giữ đèn là CHỦ; 主意 Bài 4) + 要 (hai tay chống eo — MUỐN, CẦN; quan trọng, 重要). CHỦ YẾU đọc y tiếng Việt.",
+      ph:[["主要的球员", "zhǔyào de qiúyuán", "cầu thủ chủ lực"], ["主要是因为", "zhǔyào shì yīnwèi", "chủ yếu là vì"]],
+      se:[["主要的球员没参加比赛，所以大家也都受到影响了。", "Zhǔyào de qiúyuán méi cānjiā bǐsài, suǒyǐ dàjiā yě dōu shòudào yǐngxiǎng le.", "Cầu thủ chủ lực không đá, nên cả đội cũng bị ảnh hưởng.", "主要的球员"], ["主要是因为人太少了。", "Zhǔyào shì yīnwèi rén tài shǎo le.", "Chủ yếu là vì người ít quá.", "主要是因为"]]},
+
+    {hz:"影响", py:"yǐngxiǎng", pos:"danh từ / động từ", vn:"ảnh hưởng", hv:"ẢNH HƯỞNG", use:"Dùng khi một việc TÁC ĐỘNG tới người / việc khác. Danh từ: 受到……的影响、有影响、影响很大 / 影响最大; động từ: 影响 + N (影响学习). Hỏi: 谁对你的影响最大？", tip:"影 (景 cảnh + 彡 tia sáng: cảnh vật in bóng — ẢNH, BÓNG; 电影) + 响 (口 miệng + 向 hướng về: tiếng vọng về một phía — VANG, TIẾNG): lan ra như bóng, như tiếng vọng. ẢNH HƯỞNG đọc y tiếng Việt.",
+      ph:[["受到影响", "shòudào yǐngxiǎng", "bị ảnh hưởng"], ["影响很大", "yǐngxiǎng hěn dà", "ảnh hưởng rất lớn"]],
+      se:[["主要的球员没参加比赛，所以大家也都受到影响了。", "Zhǔyào de qiúyuán méi cānjiā bǐsài, suǒyǐ dàjiā yě dōu shòudào yǐngxiǎng le.", "Cầu thủ chủ lực không đá, nên cả đội cũng bị ảnh hưởng.", "受到影响"], ["谁对你的影响最大？", "Shéi duì nǐ de yǐngxiǎng zuì dà?", "Ai ảnh hưởng tới bạn nhiều nhất?", "影响最大"]]},
+
+    {hz:"受到", py:"shòudào", pos:"động từ · v.", vn:"chịu, bị, nhận được", hv:"THỤ ĐÁO", use:"Dùng với danh từ hai chữ phía sau: 受到影响、受到……的影响 (chịu ảnh hưởng của ai). Trong bài: 大家也都受到影响了; bài tập: 受到我爸爸的影响，我十几岁就开始打网球了。", tip:"受 (爫 bàn tay trên + 冖 + 又 bàn tay dưới: tay trao, tay nhận — NHẬN, CHỊU; giữa là 冖, khác 爱) + 到 (至 tới nơi + 刂: đã tới nơi — ĐẾN): nhận tới tay mình. THỤ như “tiếp thụ”.",
+      ph:[["受到影响", "shòudào yǐngxiǎng", "bị ảnh hưởng"], ["受到……的影响", "shòudào… de yǐngxiǎng", "chịu ảnh hưởng của …"]],
+      se:[["主要的球员没参加比赛，所以大家也都受到影响了。", "Zhǔyào de qiúyuán méi cānjiā bǐsài, suǒyǐ dàjiā yě dōu shòudào yǐngxiǎng le.", "Cầu thủ chủ lực không đá, nên cả đội cũng bị ảnh hưởng.", "受到影响"], ["受到我爸爸的影响，我十几岁就开始打网球了。", "Shòudào wǒ bàba de yǐngxiǎng, wǒ shí jǐ suì jiù kāishǐ dǎ wǎngqiú le.", "Chịu ảnh hưởng của bố, tôi mười mấy tuổi đã bắt đầu chơi tennis.", "受到我爸爸的影响"]]},
+
+    {hz:"得分", py:"défēn", pos:"động từ / danh từ", vn:"ghi điểm; điểm số", hv:"ĐẮC PHÂN", use:"Dùng khi xem / chơi thể thao: ghi bàn, có điểm — 谁得分了？、得了两分 (ly hợp: số điểm chen giữa); danh từ: 告诉我得分 (tỉ số). ⚠ 得 ở đây đọc dé, khác děi (phải, Bài 8) và de (跑得快).", tip:"得 (彳 bước đi + tay nhặt vật quý: đi ra nhặt ĐƯỢC; đọc dé) + 分 (八 tách + 刀 dao: dao chia làm đôi — PHÂN; nay là ĐIỂM, 分开 Bài 6): được điểm.",
+      ph:[["得分了", "défēn le", "ghi điểm rồi"], ["告诉我得分", "gàosu wǒ défēn", "báo tỉ số cho tôi"]],
+      se:[["现在几比几？谁得分了？", "Xiànzài jǐ bǐ jǐ? Shéi défēn le?", "Giờ tỉ số mấy – mấy? Ai ghi điểm rồi?", "得分了"], ["我不看了，你们告诉我得分吧。", "Wǒ bú kàn le, nǐmen gàosu wǒ défēn ba.", "Tớ không xem nữa, các cậu báo tỉ số cho tớ nhé.", "告诉我得分"]]},
+
+    {hz:"体育", py:"tǐyù", pos:"danh từ · n.", vn:"thể thao", hv:"THỂ DỤC", use:"Dùng khi nói thể thao nói chung: 体育比赛 (thi đấu thể thao)、体育馆 (Bài 8). Trong bài: 我喜欢看体育比赛 · 奥运会是世界上影响最大的体育比赛。⚠ Âm Hán Việt THỂ DỤC nhưng nghĩa rộng là “thể thao”.", tip:"体 (亻 người + 本 gốc: gốc của con người là cơ THỂ, 身体) + 育 (đứa bé vừa sinh + 月 thịt, cơ thể: nuôi lớn — DỤC; 体育馆 Bài 8): rèn luyện thân thể = thể thao.",
+      ph:[["体育比赛", "tǐyù bǐsài", "thi đấu thể thao"], ["影响最大的体育比赛", "yǐngxiǎng zuì dà de tǐyù bǐsài", "cuộc thi thể thao có ảnh hưởng lớn nhất"]],
+      se:[["我喜欢看体育比赛，最爱看的就是奥运会。", "Wǒ xǐhuan kàn tǐyù bǐsài, zuì ài kàn de jiù shì Àoyùnhuì.", "Tôi thích xem thi đấu thể thao, thích nhất là Thế vận hội.", "体育比赛"], ["奥运会是世界上影响最大的体育比赛。", "Àoyùnhuì shì shìjiè shang yǐngxiǎng zuì dà de tǐyù bǐsài.", "Thế vận hội là cuộc thi thể thao có ảnh hưởng lớn nhất thế giới.", "影响最大的体育比赛"]]},
+
+    {hz:"世界", py:"shìjiè", pos:"danh từ · n.", vn:"thế giới", hv:"THẾ GIỚI", use:"Dùng khi nói toàn thế giới, các nước: 世界上 (trên thế giới)、世界上最……的、在世界上很有名、让世界认识中国. Hỏi: 最想去世界上哪儿？", tip:"世 (ba chữ 十 nối nhau = 30 năm — một ĐỜI người; sau là THẾ gian; 5 nét) + 界 (田 ruộng + 介 ở giữa: đường bờ ngăn giữa các thửa ruộng — RANH GIỚI). THẾ GIỚI đọc y tiếng Việt.",
+      ph:[["世界上", "shìjiè shang", "trên thế giới"], ["让世界认识", "ràng shìjiè rènshi", "để thế giới biết đến"]],
+      se:[["奥运会是世界上影响最大的体育比赛。", "Àoyùnhuì shì shìjiè shang yǐngxiǎng zuì dà de tǐyù bǐsài.", "Thế vận hội là cuộc thi thể thao có ảnh hưởng lớn nhất thế giới.", "世界上"], ["虽然他没有得到好成绩，但是他让世界认识了中国。", "Suīrán tā méiyǒu dédào hǎo chéngjì, dànshì tā ràng shìjiè rènshi le Zhōngguó.", "Tuy không đạt thành tích tốt, nhưng anh ấy đã giúp thế giới biết đến Trung Quốc.", "让世界认识了中国"]]},
+
+    {hz:"运动员", py:"yùndòngyuán", pos:"danh từ · n.", vn:"vận động viên", hv:"VẬN ĐỘNG VIÊN", use:"Dùng khi nói người chơi thể thao chuyên nghiệp: 一位运动员、中国运动员、网球运动员、羽毛球运动员. Chơi cho vui thì không gọi là 运动员: 我不是运动员，只是喜欢打球。", tip:"运动 (辶 đi + 云 mây: mây trôi — VẬN; 云 + 力: dùng sức — ĐỘNG) + 员 (口 người + 贝 tiền: người nhận tiền làm việc — VIÊN, 服务员). Thấy đuôi 员 là biết “người làm việc đó”.",
+      ph:[["中国运动员", "Zhōngguó yùndòngyuán", "vận động viên Trung Quốc"], ["网球运动员", "wǎngqiú yùndòngyuán", "vận động viên quần vợt"]],
+      se:[["第一位参加奥运会的中国运动员是刘长春。", "Dì yī wèi cānjiā Àoyùnhuì de Zhōngguó yùndòngyuán shì Liú Chángchūn.", "Vận động viên Trung Quốc đầu tiên dự Thế vận hội là Lưu Trường Xuân.", "中国运动员"], ["你打得这么好，是羽毛球运动员吗？", "Nǐ dǎ de zhème hǎo, shì yǔmáoqiú yùndòngyuán ma?", "Bạn đánh hay thế, là vận động viên cầu lông à?", "羽毛球运动员"]]},
+
+    {hz:"成绩", py:"chéngjì", pos:"danh từ · n.", vn:"thành tích, điểm số", hv:"THÀNH TÍCH", use:"Dùng khi nói KẾT QUẢ học tập, thi đấu bằng điểm / thứ hạng: 成绩很好 / 不错、好成绩、考试成绩、得到好成绩. ⚠ Kết quả thi → 考试成绩, không nói ✗考试结果.", tip:"成 (cầm 戈 cây giáo làm xong việc lớn — THÀNH; 6 nét) + 绩 (纟 tơ + 责 trách nhiệm: xe tơ đủ phần việc được giao — CÔNG TÍCH; 责 có 贝 bên dưới). THÀNH TÍCH đọc y tiếng Việt.",
+      ph:[["好成绩", "hǎo chéngjì", "thành tích tốt"], ["考试成绩", "kǎoshì chéngjì", "điểm thi"]],
+      se:[["虽然他没有得到好成绩，但是他让世界认识了中国。", "Suīrán tā méiyǒu dédào hǎo chéngjì, dànshì tā ràng shìjiè rènshi le Zhōngguó.", "Tuy không đạt thành tích tốt, nhưng anh ấy đã giúp thế giới biết đến Trung Quốc.", "好成绩"], ["这次考试成绩怎么样？", "Zhè cì kǎoshì chéngjì zěnmeyàng?", "Điểm thi lần này thế nào?", "考试成绩"]]},
+
+    {hz:"得到", py:"dédào", pos:"động từ · v.", vn:"được, đạt được", hv:"ĐẮC ĐÁO", use:"Dùng khi nhận được, đạt được cái gì: 得到 + N — 得到好成绩、得到很好的成绩; phủ định 没有得到. ⚠ 得 ở đây đọc dé, khác 得 děi (phải, Bài 8) và 得 de (跑得快).", tip:"得 (彳 bước đi + tay nhặt vật quý: đi ra nhặt ĐƯỢC; đọc dé trong 得到 · 得分) + 到 (至 tới nơi + 刂: đã tới nơi — ĐẾN; 受到 · 得到): đạt tới tay. ĐẮC như “đắc ý”.",
+      ph:[["得到好成绩", "dédào hǎo chéngjì", "đạt thành tích tốt"], ["得到很好的成绩", "dédào hěn hǎo de chéngjì", "đạt thành tích rất tốt"]],
+      se:[["虽然他没有得到好成绩，但是他让世界认识了中国。", "Suīrán tā méiyǒu dédào hǎo chéngjì, dànshì tā ràng shìjiè rènshi le Zhōngguó.", "Tuy không đạt thành tích tốt, nhưng anh ấy đã giúp thế giới biết đến Trung Quốc.", "得到好成绩"], ["虽然没有得到很好的成绩，但是我认识了很多新朋友。", "Suīrán méiyǒu dédào hěn hǎo de chéngjì, dànshì wǒ rènshi le hěn duō xīn péngyou.", "Tuy không đạt thành tích thật tốt, nhưng tôi quen được nhiều bạn mới.", "得到很好的成绩"]]},
+
+    {hz:"奥运会", py:"Àoyùnhuì", pos:"danh từ riêng", vn:"Thế vận hội Olympic", hv:"ÁO VẬN HỘI", use:"Tên riêng, nói gọn của 奥林匹克运动会 (Thế vận hội Olympic): 参加奥运会、看奥运会、北京奥运会 (2008). Trong bài: 奥运会是世界上影响最大的体育比赛。", tip:"奥 (ÁO — phiên âm chữ “O” của Olympic) + 运 (vận động) + 会 (hội): hội thể thao Olympic. Cùng khuôn với 运动会 vừa học, chỉ thêm 奥 phía trước; pinyin viết hoa chữ đầu.",
+      ph:[["参加奥运会", "cānjiā Àoyùnhuì", "tham dự Thế vận hội"], ["看奥运会", "kàn Àoyùnhuì", "xem Thế vận hội"]],
+      se:[["第一位参加奥运会的中国运动员是刘长春。", "Dì yī wèi cānjiā Àoyùnhuì de Zhōngguó yùndòngyuán shì Liú Chángchūn.", "Vận động viên Trung Quốc đầu tiên dự Thế vận hội là Lưu Trường Xuân.", "参加奥运会"], ["我喜欢看体育比赛，最爱看的就是奥运会。", "Wǒ xǐhuan kàn tǐyù bǐsài, zuì ài kàn de jiù shì Àoyùnhuì.", "Tôi thích xem thi đấu thể thao, thích nhất là Thế vận hội.", "最爱看的就是奥运会"]]},
+
+    {hz:"刘长春", py:"Liú Chángchūn", pos:"danh từ riêng", vn:"Lưu Trường Xuân (vận động viên)", hv:"LƯU TRƯỜNG XUÂN", use:"Tên người: họ 刘 + tên 长春 — vận động viên Trung Quốc đầu tiên dự Thế vận hội (năm 1932, chạy 100 m và 200 m). ⚠ 长 ở đây đọc cháng (dài), không đọc zhǎng như trong 长大.", tip:"刘 là họ Lưu, giống 刘明 trong sách; 长春 = “mùa xuân dài”, cũng là tên thành phố Trường Xuân ở đông bắc Trung Quốc. Pinyin viết hoa cả họ và tên: Liú Chángchūn.",
+      ph:[["中国运动员刘长春", "Zhōngguó yùndòngyuán Liú Chángchūn", "vận động viên Trung Quốc Lưu Trường Xuân"], ["刘长春的影响", "Liú Chángchūn de yǐngxiǎng", "ảnh hưởng của Lưu Trường Xuân"]],
+      se:[["第一位参加奥运会的中国运动员是刘长春。", "Dì yī wèi cānjiā Àoyùnhuì de Zhōngguó yùndòngyuán shì Liú Chángchūn.", "Vận động viên Trung Quốc đầu tiên dự Thế vận hội là Lưu Trường Xuân.", "中国运动员是刘长春"], ["刘长春的影响是什么？", "Liú Chángchūn de yǐngxiǎng shì shénme?", "Ảnh hưởng của Lưu Trường Xuân là gì?", "刘长春的影响"]]}
+  ]
+};
+
+/* ====================== phát âm ====================== */
+let zhVoice = null;
+function pickVoice(){
+  const vs = window.speechSynthesis ? speechSynthesis.getVoices() : [];
+  const zh = vs.filter(v => /^zh/i.test(v.lang));
+  zhVoice = zh.find(v => /CN|Hans|Chinese \(China\)|普通话|Mandarin/i.test(v.lang + v.name)) || zh[0] || null;
+}
+if (window.speechSynthesis){
+  pickVoice();
+  speechSynthesis.onvoiceschanged = pickVoice;
+}
+function speak(text, btn){
+  if (btn){
+    document.querySelectorAll('.spk.playing').forEach(b => b.classList.remove('playing'));
+    btn.classList.add('playing');
+    setTimeout(() => btn.classList.remove('playing'), 1400);
+  }
+  if (window.speechSynthesis && zhVoice){
+    speechSynthesis.cancel();
+    const u = new SpeechSynthesisUtterance(text);
+    u.voice = zhVoice; u.lang = zhVoice.lang; u.rate = 0.8;
+    speechSynthesis.speak(u);
+    return;
+  }
+  try{
+    const a = new Audio('https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=zh-CN&q=' + encodeURIComponent(text));
+    a.play().catch(() => {});
+  }catch(e){}
+}
+
+/* ====================== dựng thẻ ====================== */
+function esc(s){ return s.replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+
+const MARK = ['①','②','③','④','⑤'];
+
+function rows(list, hl){
+  return list.map((r, i) => {
+    let zh = esc(r[0]);
+    if (hl && r[3]){
+      const k = esc(r[3]);
+      zh = zh.replace(k, '<span class="hl">' + k + '</span>');
+    }
+    return `
+    <div class="item">
+      <button class="spk sm" data-say="${esc(r[0].replace(/[…]/g,''))}">🔊</button>
+      <div class="body">
+        <div class="zh han"><span class="idx">${MARK[i] || ''}</span>${zh}</div>
+        <div class="pz py">${esc(r[1])}</div>
+        <div class="vn2">${esc(r[2])}</div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function cardHTML(w, idx){
+  // mặt trước đổi theo chiều học
+  const front = (dir === 'zh')
+    ? `<div class="hz han">${esc(w.hz)}</div>
+       <button class="spk" data-say="${esc(w.hz)}" aria-label="Nghe đọc">🔊</button>`
+    : `<div class="vnfront">${esc(w.vn)}</div>`;
+
+  const st = marks[idx] || '';
+  const stCls = st ? ' st-' + st : '';
+  const pill = st
+    ? `<div class="state ${st}">${st === 'known' ? '✓ Đã thuộc' : '↻ Cần ôn thêm'}</div>`
+    : '';
+
+  return `
+  <div class="flip" data-i="${idx}">
+    <div class="inner">
+
+      <div class="face front${stCls}">
+        <div class="tag">${idx + 1}</div>
+        ${pill}
+        <div class="inner-front">${front}</div>
+        <div class="flipnote">chạm để lật ↻</div>
+      </div>
+
+      <div class="face back${stCls}">
+        <div class="tag">${idx + 1}</div>
+        <div class="pos">${esc(w.pos)}</div>
+
+        <div class="bhead">
+          <button class="spk" data-say="${esc(w.hz)}" aria-label="Nghe đọc">🔊</button>
+          <div>
+            <div class="hz han">${esc(w.hz)}</div>
+            <div class="pin py">${esc(w.py)}</div>
+          </div>
+        </div>
+
+        <div class="mean">
+          <div class="vn">${esc(w.vn)}</div>
+          <div class="hv">Hán Việt: ${esc(w.hv)}</div>
+        </div>
+
+        <div class="use">
+          <div class="ulab">Dùng khi nào</div>
+          <div class="utxt">${esc(w.use)}</div>
+        </div>
+
+        <div class="tip">
+          <div class="ulab">💡 Mẹo nhớ</div>
+          <div class="utxt">${esc(w.tip)}</div>
+        </div>
+
+        <div class="sec">
+          <h3>Cụm từ thường dùng</h3>
+          ${rows(w.ph, false)}
+        </div>
+
+        <div class="sec">
+          <h3>Câu ví dụ — theo thứ tự cụm từ ở trên</h3>
+          ${rows(w.se, true)}
+        </div>
+
+        <div class="acts">
+          <button class="ok${st === 'known' ? ' on' : ''}" data-mark="known">✓ Đã thuộc</button>
+          <button class="re${st === 'review' ? ' on' : ''}" data-mark="review">↻ Cần ôn thêm</button>
+        </div>
+        <div class="flipnote">chạm vào thẻ để lật lại ↺</div>
+      </div>
+
+    </div>
+  </div>`;
+}
+
+/* ====================== chiều cao thẻ lật ====================== */
+function fit(flipEl){
+  const inner = flipEl.querySelector('.inner');
+  const face = flipEl.querySelector(inner.classList.contains('flipped') ? '.back' : '.front');
+  inner.style.height = face.offsetHeight + 'px';
+}
+function fitAll(){ document.querySelectorAll('.flip').forEach(fit); }
+
+/* ====================== trạng thái ====================== */
+const stage = document.getElementById('stage');
+const nav = document.getElementById('nav');
+const progwrap = document.getElementById('progwrap');
+const countEl = document.getElementById('count');
+const progEl = document.getElementById('prog');
+
+const KEY = 'flashcard-hsk3-bai09';
+let marks = {};
+try{
+  const raw = localStorage.getItem(KEY);
+  if (raw) marks = JSON.parse(raw) || {};
+}catch(e){ marks = {}; }
+function save(){
+  try{ localStorage.setItem(KEY, JSON.stringify(marks)); }catch(e){}
+}
+
+let base = DATA.words.map((_, i) => i);
+let order = base.slice();
+let pos = 0;
+let mode = 'deck';
+let dir = 'zh';
+let filter = 'all';
+
+function applyFilter(){
+  order = base.filter(i => {
+    const m = marks[i];
+    if (filter === 'known')  return m === 'known';
+    if (filter === 'review') return m === 'review';
+    if (filter === 'new')    return !m;
+    return true;
+  });
+  if (pos >= order.length) pos = Math.max(0, order.length - 1);
+}
+
+function updateCounts(){
+  const vals = Object.values(marks);
+  const k = vals.filter(v => v === 'known').length;
+  const r = vals.filter(v => v === 'review').length;
+  const n = DATA.words.length - k - r;
+  document.getElementById('counts').innerHTML =
+    `<span class="cK">✓ Đã thuộc ${k}</span> · <span class="cR">↻ Cần ôn thêm ${r}</span> · Chưa phân loại ${n}`;
+}
+
+function mark(i, val){
+  if (marks[i] === val) delete marks[i]; else marks[i] = val;
+  save();
+  updateCounts();
+
+  const cur = order[pos];
+  applyFilter();
+
+  if (mode === 'grid'){ render(); return; }
+  if (order.length === 0){ render(); return; }
+
+  const at = order.indexOf(cur);
+  if (at === -1){ render(); }        // thẻ vừa phân loại đã bị bộ lọc ẩn đi
+  else { pos = at; go(1); }          // còn trong danh sách thì sang thẻ kế tiếp
+}
+
+function render(){
+  updateCounts();
+
+  if (order.length === 0){
+    stage.className = '';
+    stage.innerHTML = '<div class="empty">Không có thẻ nào trong mục này.</div>';
+    nav.classList.add('hidden');
+    progwrap.classList.add('hidden');
+    return;
+  }
+
+  if (mode === 'deck'){
+    stage.className = '';
+    stage.innerHTML = cardHTML(DATA.words[order[pos]], order[pos]);
+    nav.classList.remove('hidden');
+    progwrap.classList.remove('hidden');
+    countEl.textContent = (pos + 1) + ' / ' + order.length;
+    progEl.style.width = ((pos + 1) / order.length * 100) + '%';
+  } else {
+    stage.className = 'grid';
+    stage.innerHTML = order.map(i => cardHTML(DATA.words[i], i)).join('');
+    nav.classList.add('hidden');
+    progwrap.classList.add('hidden');
+  }
+  fitAll();
+  requestAnimationFrame(fitAll);
+}
+
+function go(d){
+  pos = (pos + d + order.length) % order.length;
+  render();
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+
+function flip(flipEl){
+  const inner = flipEl.querySelector('.inner');
+  inner.classList.toggle('flipped');
+  fit(flipEl);
+}
+
+/* ====================== sự kiện ====================== */
+stage.addEventListener('click', e => {
+  const sp = e.target.closest('.spk');
+  if (sp){ e.stopPropagation(); speak(sp.dataset.say, sp); return; }
+  const mk = e.target.closest('[data-mark]');
+  if (mk){
+    e.stopPropagation();
+    mark(parseInt(mk.closest('.flip').dataset.i, 10), mk.dataset.mark);
+    return;
+  }
+  const fl = e.target.closest('.flip');
+  if (fl) flip(fl);
+});
+
+document.getElementById('prev').onclick = () => go(-1);
+document.getElementById('next').onclick = () => go(1);
+
+document.getElementById('mode-deck').onclick = function(){
+  mode = 'deck'; this.classList.add('on');
+  document.getElementById('mode-grid').classList.remove('on');
+  render();
+};
+document.getElementById('mode-grid').onclick = function(){
+  mode = 'grid'; this.classList.add('on');
+  document.getElementById('mode-deck').classList.remove('on');
+  render();
+};
+document.getElementById('dir-zh').onclick = function(){
+  dir = 'zh'; this.classList.add('on');
+  document.getElementById('dir-vi').classList.remove('on');
+  render();
+};
+document.getElementById('dir-vi').onclick = function(){
+  dir = 'vi'; this.classList.add('on');
+  document.getElementById('dir-zh').classList.remove('on');
+  render();
+};
+document.getElementById('shuffle').onclick = () => {
+  for (let i = base.length - 1; i > 0; i--){
+    const j = Math.floor(Math.random() * (i + 1));
+    [base[i], base[j]] = [base[j], base[i]];
+  }
+  pos = 0; applyFilter(); render();
+};
+
+document.getElementById('reset').onclick = () => {
+  if (!Object.keys(marks).length) return;
+  if (!confirm('Xoá toàn bộ phân loại “đã thuộc / cần ôn thêm”?')) return;
+  marks = {}; save(); pos = 0; applyFilter(); render();
+};
+
+[['f-all','all'], ['f-new','new'], ['f-review','review'], ['f-known','known']].forEach(([id, val]) => {
+  document.getElementById(id).onclick = function(){
+    filter = val; pos = 0;
+    document.querySelectorAll('#f-all,#f-new,#f-review,#f-known').forEach(b => b.classList.remove('on'));
+    this.classList.add('on');
+    applyFilter(); render();
+  };
+});
+
+document.addEventListener('keydown', e => {
+  if (mode !== 'deck' || order.length === 0) return;
+  if (e.key === 'ArrowRight') go(1);
+  else if (e.key === 'ArrowLeft') go(-1);
+  else if (e.key === '1') mark(order[pos], 'known');
+  else if (e.key === '2') mark(order[pos], 'review');
+  else if (e.key === ' ' || e.key === 'Enter'){
+    e.preventDefault();
+    const fl = document.querySelector('.flip');
+    if (fl) flip(fl);
+  }
+});
+
+window.addEventListener('resize', fitAll);
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitAll);
+window.addEventListener('load', fitAll);
+
+render();
+</script>
+<!-- CHAY-NET:dau -->
+<script src="../assets/chay-net.js" defer></script>
+<!-- CHAY-NET:cuoi -->
+</body>
+</html>
