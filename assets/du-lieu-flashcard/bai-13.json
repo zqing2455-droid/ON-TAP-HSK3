@@ -1,0 +1,982 @@
+[
+ {
+  "hz": "请客",
+  "py": "qǐngkè",
+  "pos": "động từ · v.",
+  "vn": "mời (ăn), đãi",
+  "hv": "THỈNH KHÁCH",
+  "use": "Dùng khi MÌNH mời người khác ăn uống và mình TRẢ TIỀN: 今天我请客 · 请你们吃饭 · 谁请客？ Vừa được thưởng, đi ăn với đồng nghiệp: 今天我请客，大家别客气！ ⚠ Đến nhà người khác chơi là 做客, không nói ✗来我家请客.",
+  "tip": "请 (mời) + 客 (khách): mời khách thì mình là chủ, mình trả tiền. 请 = 讠 (lời) + 青: lời mời trong trẻo; 客 = mái nhà 宀 + 各 (mỗi người): người nơi khác tới nhà. Hán Việt THỈNH KHÁCH.",
+  "ph": [
+   [
+    "今天我请客",
+    "jīntiān wǒ qǐngkè",
+    "hôm nay tôi mời"
+   ],
+   [
+    "谁请客",
+    "shéi qǐngkè",
+    "ai mời (ai trả tiền)?"
+   ]
+  ],
+  "se": [
+   [
+    "今天我请客，你们想吃什么就点什么！",
+    "Jīntiān wǒ qǐngkè, nǐmen xiǎng chī shénme jiù diǎn shénme!",
+    "Hôm nay em mời, mọi người muốn ăn gì cứ gọi!",
+    "今天我请客"
+   ],
+   [
+    "上次谁请你吃饭了？我同事请客了。",
+    "Shàng cì shéi qǐng nǐ chī fàn le? Wǒ tóngshì qǐngkè le.",
+    "Lần trước ai mời cậu ăn thế? Đồng nghiệp mình mời.",
+    "同事请客"
+   ]
+  ]
+ },
+ {
+  "hz": "加",
+  "py": "jiā",
+  "pos": "động từ · v.",
+  "vn": "thêm",
+  "hv": "GIA",
+  "use": "Dùng khi gọi thêm món, thêm một thứ vào cái đã có: 再加一个菜 · 再加一个鸡肉 · 加一点儿糖. Khung: 再 + 加 + số lượng + N. ⚠ Người Việt hay bỏ mất động từ: ✗再一个菜 → 再加一个菜 hoặc 再来一个菜.",
+  "tip": "力 (sức) + 口 (miệng): vừa ra sức vừa hô — THÊM. Em đã gặp chữ này trong 参加 (Bài 9, tham gia), nay 加 đứng một mình là thêm món. Hán Việt GIA như “gia tăng”, “gia vị”.",
+  "ph": [
+   [
+    "再加一个菜",
+    "zài jiā yí ge cài",
+    "gọi thêm một món"
+   ],
+   [
+    "加一个鸡肉",
+    "jiā yí ge jīròu",
+    "thêm một món gà"
+   ]
+  ],
+  "se": [
+   [
+    "咱们只点了一个鸡肉，再加几个肉菜吧。",
+    "Zánmen zhǐ diǎn le yí ge jīròu, zài jiā jǐ ge ròucài ba.",
+    "Mình mới gọi có một món gà, thêm vài món thịt nữa đi.",
+    "再加几个肉菜"
+   ],
+   [
+    "好，那再加一个鸡肉。",
+    "Hǎo, nà zài jiā yí ge jīròu.",
+    "Được, vậy thêm một món gà.",
+    "加一个鸡肉"
+   ]
+  ]
+ },
+ {
+  "hz": "南方",
+  "py": "nánfāng",
+  "pos": "danh từ · n.",
+  "vn": "miền Nam, phương Nam",
+  "hv": "NAM PHƯƠNG",
+  "use": "Dùng khi nói cả vùng phía Nam của một nước: 南方菜 · 南方人 · 在南方. Đối lập với 北方. Bạn Trung Quốc hỏi em người miền nào: 我是南方人. ⚠ Hướng nam của một chỗ cụ thể thì nói 南边: 学校的南边.",
+  "tip": "南 (nam) + 方 (phương). 南 là chiếc chuông nhạc treo hướng Nam; 方 là hai thuyền buộc song song — phương hướng, em đã gặp ở 地方 (Bài 12). Hán Việt NAM PHƯƠNG.",
+  "ph": [
+   [
+    "南方菜",
+    "nánfāng cài",
+    "món ăn miền Nam"
+   ],
+   [
+    "南方人",
+    "nánfāng rén",
+    "người miền Nam"
+   ]
+  ],
+  "se": [
+   [
+    "南方菜跟你们北方菜的做法不同。",
+    "Nánfāng cài gēn nǐmen běifāng cài de zuòfǎ bù tóng.",
+    "Món miền Nam nấu khác với món miền Bắc của mọi người.",
+    "南方菜"
+   ],
+   [
+    "我是南方人，我家在胡志明市。",
+    "Wǒ shì nánfāng rén, wǒ jiā zài Húzhìmíng Shì.",
+    "Tôi là người miền Nam, nhà tôi ở Thành phố Hồ Chí Minh.",
+    "南方人"
+   ]
+  ]
+ },
+ {
+  "hz": "北方",
+  "py": "běifāng",
+  "pos": "danh từ · n.",
+  "vn": "miền Bắc, phương Bắc",
+  "hv": "BẮC PHƯƠNG",
+  "use": "Dùng khi nói cả vùng phía Bắc của một nước, đi thành cặp với 南方: 北方菜 · 北方人 · 北方的冬天. Trong bài, 北京菜 cũng là 北方菜. ⚠ Hướng bắc của một chỗ cụ thể → 北边.",
+  "tip": "北 (bắc) + 方 (phương). 北 là hai người quay lưng vào nhau — lưng, phía Bắc; em biết từ 北京. 方 là hai thuyền buộc song song — phương hướng. Hán Việt BẮC PHƯƠNG.",
+  "ph": [
+   [
+    "北方菜",
+    "běifāng cài",
+    "món ăn miền Bắc"
+   ],
+   [
+    "北方人",
+    "běifāng rén",
+    "người miền Bắc"
+   ]
+  ],
+  "se": [
+   [
+    "南方菜跟你们北方菜的做法不同。",
+    "Nánfāng cài gēn nǐmen běifāng cài de zuòfǎ bù tóng.",
+    "Món miền Nam nấu khác với món miền Bắc của mọi người.",
+    "北方菜"
+   ],
+   [
+    "很多北方人喜欢吃面条。",
+    "Hěn duō běifāng rén xǐhuan chī miàntiáo.",
+    "Nhiều người miền Bắc thích ăn mì.",
+    "北方人"
+   ]
+  ]
+ },
+ {
+  "hz": "做法",
+  "py": "zuòfǎ",
+  "pos": "danh từ · n.",
+  "vn": "cách làm",
+  "hv": "TỐ PHÁP",
+  "use": "Dùng khi nói cách làm một món ăn hay một việc: 做法不同 · 鱼的做法 · 这个菜的做法. Hay đứng sau N + 的. Từ này thuộc cấp 4, em chỉ cần hiểu khi đọc bài khoá: 南方菜跟北方菜的做法不同.",
+  "tip": "做 (làm; 亻 + 故: người làm theo cách cũ) + 法 (氵 + 去: nước chảy theo một lối — cách, phép). 法 em gặp trong 办法 (Bài 11): 办法 là cách giải quyết, 做法 là cách làm. Hán Việt TỐ PHÁP.",
+  "ph": [
+   [
+    "做法不同",
+    "zuòfǎ bù tóng",
+    "cách làm khác nhau"
+   ],
+   [
+    "鱼的做法",
+    "yú de zuòfǎ",
+    "cách nấu cá"
+   ]
+  ],
+  "se": [
+   [
+    "南方菜跟你们北方菜的做法不同。",
+    "Nánfāng cài gēn nǐmen běifāng cài de zuòfǎ bù tóng.",
+    "Món miền Nam nấu khác với món miền Bắc của mọi người.",
+    "做法不同"
+   ],
+   [
+    "这家饭馆鱼的做法很特别。",
+    "Zhè jiā fànguǎn yú de zuòfǎ hěn tèbié.",
+    "Cách nấu cá của quán này rất đặc biệt.",
+    "鱼的做法"
+   ]
+  ]
+ },
+ {
+  "hz": "不同",
+  "py": "bù tóng",
+  "pos": "tính từ · adj.",
+  "vn": "khác, không giống",
+  "hv": "BẤT ĐỒNG",
+  "use": "Dùng khi so sánh hai thứ khác nhau, trang trọng hơn 不一样 một chút: A 跟 B 不同 · 不同的地方 · 有什么不同？ Là phủ định của 一样 (Bài 4). ⚠ Đừng ghép hai cái: ✗不同一样 — nói 不同 hoặc 不一样.",
+  "tip": "不 + 同 (cùng): không cùng = khác. 同 = 冂 + 一 + 口: mọi miệng trong một khung — cùng; em biết trong 同学, 同事 (Bài 11). Âm Hán Việt BẤT ĐỒNG như “bất đồng ý kiến”.",
+  "ph": [
+   [
+    "跟……不同",
+    "gēn… bù tóng",
+    "khác với…"
+   ],
+   [
+    "不同的文化",
+    "bù tóng de wénhuà",
+    "văn hoá khác nhau"
+   ]
+  ],
+  "se": [
+   [
+    "南方菜跟你们北方菜的做法不同。",
+    "Nánfāng cài gēn nǐmen běifāng cài de zuòfǎ bù tóng.",
+    "Món miền Nam nấu khác với món miền Bắc của mọi người.",
+    "跟你们北方菜的做法不同"
+   ],
+   [
+    "河内跟胡志明市的天气很不同。",
+    "Hénèi gēn Húzhìmíng Shì de tiānqì hěn bù tóng.",
+    "Thời tiết Hà Nội và Thành phố Hồ Chí Minh rất khác nhau.",
+    "很不同"
+   ]
+  ]
+ },
+ {
+  "hz": "做客",
+  "py": "zuòkè",
+  "pos": "động từ · v.",
+  "vn": "làm khách, đến chơi nhà",
+  "hv": "TỐ KHÁCH",
+  "use": "Dùng khi ĐẾN NHÀ người khác chơi theo lời mời: 来我家做客 · 去朋友家做客. Từ ly hợp: 做过客 · 做了一次客. Mời hàng xóm: 星期天来我家做客吧！ ⚠ Mình mời và mình trả tiền → 请客; không nói ✗来我家请客.",
+  "tip": "做 (làm) + 客 (khách): làm khách ở nhà người ta. So với 请客: 请 là mời (mình là chủ), 做 là làm (mình là khách). 客 = 宀 + 各: người nơi khác tới nhà. Hán Việt TỐ KHÁCH.",
+  "ph": [
+   [
+    "来我家做客",
+    "lái wǒ jiā zuòkè",
+    "đến nhà tôi chơi"
+   ],
+   [
+    "去……做客",
+    "qù… zuòkè",
+    "đến nhà … làm khách"
+   ]
+  ],
+  "se": [
+   [
+    "你们有时间的话，就来我家做客。",
+    "Nǐmen yǒu shíjiān dehuà, jiù lái wǒ jiā zuòkè.",
+    "Mọi người rảnh thì đến nhà tôi chơi.",
+    "来我家做客"
+   ],
+   [
+    "上周我去他们家做客了。",
+    "Shàng zhōu wǒ qù tāmen jiā zuòkè le.",
+    "Tuần trước tôi sang nhà họ chơi.",
+    "去他们家做客"
+   ]
+  ]
+ },
+ {
+  "hz": "的话",
+  "py": "dehuà",
+  "pos": "trợ từ · part.",
+  "vn": "nếu (thì)",
+  "hv": "ĐÍCH THOẠI",
+  "use": "Đặt CUỐI vế điều kiện trong khẩu ngữ: ……的话，(S) 就……; có thể thêm 如果 ở đầu: 如果有时间的话. Hay dùng khi mời, đề nghị: 有空的话来玩. ⚠ Chủ ngữ vế sau đứng TRƯỚC 就: 有时间的话，我们就去 (✗就我们去).",
+  "tip": "的 + 话 (lời; 讠 + 舌 lưỡi: lưỡi uốn thành lời): “nói … thì”. Nó không đứng đầu như “nếu” tiếng Việt mà đứng cuối vế, giống chữ “thì” trong “rảnh thì đến”.",
+  "ph": [
+   [
+    "有时间的话",
+    "yǒu shíjiān dehuà",
+    "nếu có thời gian"
+   ],
+   [
+    "你喜欢的话",
+    "nǐ xǐhuan dehuà",
+    "nếu em thích"
+   ]
+  ],
+  "se": [
+   [
+    "你们有时间的话，就来我家做客。",
+    "Nǐmen yǒu shíjiān dehuà, jiù lái wǒ jiā zuòkè.",
+    "Mọi người rảnh thì đến nhà tôi chơi.",
+    "有时间的话"
+   ],
+   [
+    "天气好的话，我就去。",
+    "Tiānqì hǎo dehuà, wǒ jiù qù.",
+    "Trời đẹp thì tôi đi.",
+    "天气好的话"
+   ]
+  ]
+ },
+ {
+  "hz": "邻居",
+  "py": "línjū",
+  "pos": "danh từ · n.",
+  "vn": "hàng xóm",
+  "hv": "LÂN CƯ",
+  "use": "Dùng khi nói người ở gần nhà mình: 新邻居 · 我的邻居 · 邻居家 · 跟邻居聊天儿. Giới thiệu hàng xóm với bạn: 这是我的邻居王阿姨. Hỏi quan hệ: 你跟邻居的关系怎么样？",
+  "tip": "邻 = 令 (lệnh) + 阝 bên PHẢI (ấp, làng — như 那 · 都): người cùng làng nghe chung một lệnh. 居 = 尸 (người ngồi) + 古 (lâu đời): ngồi một chỗ lâu đời — ở. Hán Việt LÂN CƯ.",
+  "ph": [
+   [
+    "新邻居",
+    "xīn línjū",
+    "hàng xóm mới"
+   ],
+   [
+    "邻居家",
+    "línjū jiā",
+    "nhà hàng xóm"
+   ]
+  ],
+  "se": [
+   [
+    "第一次请新邻居来做客，总是担心有什么没准备好。",
+    "Dì-yī cì qǐng xīn línjū lái zuòkè, zǒngshì dānxīn yǒu shénme méi zhǔnbèi hǎo.",
+    "Lần đầu mời hàng xóm mới đến chơi, cứ lo còn gì chưa chuẩn bị xong.",
+    "新邻居"
+   ],
+   [
+    "这是我的邻居王阿姨。",
+    "Zhè shì wǒ de línjū Wáng āyí.",
+    "Đây là cô Vương hàng xóm của tôi.",
+    "我的邻居"
+   ]
+  ]
+ },
+ {
+  "hz": "客人",
+  "py": "kèrén",
+  "pos": "danh từ · n.",
+  "vn": "khách",
+  "hv": "KHÁCH NHÂN",
+  "use": "Dùng khi nói người đến nhà chơi: 客人来了 · 等客人来 · 客人来了再拿出来. Trong bài, chủ nhà chuẩn bị xong thì 等客人来. 客人 là NGƯỜI, còn 做客 là việc đi làm khách.",
+  "tip": "客 (khách; 宀 mái nhà + 各 mỗi người: người nơi khác tới nhà) + 人 (người). 客 em đã gặp ở 客气: khách đến nhà hay 客气, nên chủ nhà nói 别客气！ Hán Việt KHÁCH NHÂN.",
+  "ph": [
+   [
+    "客人来了",
+    "kèrén lái le",
+    "khách đến rồi"
+   ],
+   [
+    "等客人来",
+    "děng kèrén lái",
+    "chờ khách đến"
+   ]
+  ],
+  "se": [
+   [
+    "我把饮料和酒都放进冰箱里了，客人来了再拿出来。",
+    "Wǒ bǎ yǐnliào hé jiǔ dōu fàng jìn bīngxiāng li le, kèrén lái le zài ná chūlai.",
+    "Anh cất nước ngọt với rượu vào tủ lạnh hết rồi, khách đến lấy ra sau.",
+    "客人来了"
+   ],
+   [
+    "好，那我们就等客人来吧。",
+    "Hǎo, nà wǒmen jiù děng kèrén lái ba.",
+    "Được, vậy mình chờ khách đến thôi.",
+    "等客人来"
+   ]
+  ]
+ },
+ {
+  "hz": "放心",
+  "py": "fàngxīn",
+  "pos": "động từ · v.",
+  "vn": "yên tâm",
+  "hv": "PHÓNG TÂM",
+  "use": "Dùng khi trấn an ai đó: đừng lo, mọi việc ổn: 放心吧 · 您放心 · 不放心 · 让妈妈放心. Mẹ lo em đi xa: 妈妈，您放心吧. ⚠ Dặn ai đi đường cẩn thận → 小心 (Bài 6): ✗路上放心 → 路上小心！",
+  "tip": "放 (方 + 攵 tay cầm roi: buông tay ra — thả, đặt) + 心 (hình quả tim — lòng): đặt lòng xuống = yên tâm. Ngược với 担心 (Bài 8) là gánh nỗi lo lên. Hán Việt PHÓNG TÂM.",
+  "ph": [
+   [
+    "放心吧",
+    "fàngxīn ba",
+    "yên tâm đi"
+   ],
+   [
+    "不放心",
+    "bú fàngxīn",
+    "không yên tâm"
+   ]
+  ],
+  "se": [
+   [
+    "放心吧，我帮你看了，都已经准备好了。",
+    "Fàngxīn ba, wǒ bāng nǐ kàn le, dōu yǐjīng zhǔnbèi hǎo le.",
+    "Yên tâm đi, anh xem giúp em rồi, chuẩn bị xong hết rồi.",
+    "放心吧"
+   ],
+   [
+    "你什么时候会不放心？",
+    "Nǐ shénme shíhou huì bú fàngxīn?",
+    "Khi nào thì em thấy không yên tâm?",
+    "不放心"
+   ]
+  ]
+ },
+ {
+  "hz": "酒",
+  "py": "jiǔ",
+  "pos": "danh từ · n.",
+  "vn": "rượu",
+  "hv": "TỬU",
+  "use": "Chỉ đồ uống có cồn nói chung: 喝酒 · 一瓶酒 · 饮料和酒 · 啤酒 (bia, Bài 9). Nói “uống rượu” chỉ cần 喝酒. Bạn mời rượu mà em phải lái xe: 我开车，不能喝酒.",
+  "tip": "氵 (nước) + 酉 (hũ): thứ nước ủ trong hũ = rượu. 啤酒 (bia, Bài 9) em đã học chính là 啤 + 酒. Âm Hán Việt TỬU như “tửu lượng”, “tửu quán”.",
+  "ph": [
+   [
+    "喝酒",
+    "hē jiǔ",
+    "uống rượu"
+   ],
+   [
+    "饮料和酒",
+    "yǐnliào hé jiǔ",
+    "nước ngọt và rượu"
+   ]
+  ],
+  "se": [
+   [
+    "对不起，我开车，不能喝酒。",
+    "Duìbuqǐ, wǒ kāichē, bù néng hē jiǔ.",
+    "Xin lỗi, tôi lái xe, không uống rượu được.",
+    "喝酒"
+   ],
+   [
+    "我把饮料和酒都放进冰箱里了。",
+    "Wǒ bǎ yǐnliào hé jiǔ dōu fàng jìn bīngxiāng li le.",
+    "Anh cất nước ngọt với rượu vào tủ lạnh hết rồi.",
+    "饮料和酒"
+   ]
+  ]
+ },
+ {
+  "hz": "放",
+  "py": "fàng",
+  "pos": "động từ · v.",
+  "vn": "đặt, để, cất",
+  "hv": "PHÓNG",
+  "use": "Dùng khi đặt / để một vật vào chỗ nào, rất hay đi với câu 把: 把……放在…… (đặt ở) · 把……放进…… (cho vào) · 放好 · 放糖. Sau 放 phải có 在 / 进 + nơi: ✗把饮料放冰箱里 → 放进冰箱里.",
+  "tip": "方 + 攵 (tay cầm roi): buông tay ra — thả, đặt. Cùng chữ 放 trong 放假 (Bài 6, thả cho nghỉ) và 放心 (đặt lòng xuống). Hán Việt PHÓNG như “phóng thích”.",
+  "ph": [
+   [
+    "放进冰箱",
+    "fàng jìn bīngxiāng",
+    "cất vào tủ lạnh"
+   ],
+   [
+    "放在桌子上",
+    "fàng zài zhuōzi shang",
+    "đặt lên bàn"
+   ]
+  ],
+  "se": [
+   [
+    "我把饮料和酒都放进冰箱里了。",
+    "Wǒ bǎ yǐnliào hé jiǔ dōu fàng jìn bīngxiāng li le.",
+    "Anh cất nước ngọt với rượu vào tủ lạnh hết rồi.",
+    "放进冰箱里"
+   ],
+   [
+    "你把礼物放在桌子上吧。",
+    "Nǐ bǎ lǐwù fàng zài zhuōzi shang ba.",
+    "Em đặt quà lên bàn đi.",
+    "放在桌子上"
+   ]
+  ]
+ },
+ {
+  "hz": "晚会",
+  "py": "wǎnhuì",
+  "pos": "danh từ · n.",
+  "vn": "buổi tiệc tối, dạ hội",
+  "hv": "VÃN HỘI",
+  "use": "Dùng khi nói buổi tiệc, buổi văn nghệ tổ chức vào buổi tối: 生日晚会 · 参加晚会 · 晚会玩得怎么样？ Trong bài là tiệc sinh nhật của Tiểu Minh: 参加我儿子的生日晚会.",
+  "tip": "晚 (日 + 免: mặt trời đi mất — tối) + 会 (người tụ lại dưới một mái — hội). 会 em đã gặp trong 运动会 (Bài 9): 晚会 là “hội” buổi tối, để vui. Hán Việt VÃN HỘI.",
+  "ph": [
+   [
+    "生日晚会",
+    "shēngrì wǎnhuì",
+    "tiệc sinh nhật"
+   ],
+   [
+    "参加晚会",
+    "cānjiā wǎnhuì",
+    "dự tiệc tối"
+   ]
+  ],
+  "se": [
+   [
+    "谢谢你们来参加我儿子的生日晚会。",
+    "Xièxie nǐmen lái cānjiā wǒ érzi de shēngrì wǎnhuì.",
+    "Cảm ơn mọi người đến dự tiệc sinh nhật con trai tôi.",
+    "参加我儿子的生日晚会"
+   ],
+   [
+    "昨天的生日晚会玩得怎么样？",
+    "Zuótiān de shēngrì wǎnhuì wán de zěnmeyàng?",
+    "Tiệc sinh nhật hôm qua chơi vui không?",
+    "晚会玩得怎么样"
+   ]
+  ]
+ },
+ {
+  "hz": "礼物",
+  "py": "lǐwù",
+  "pos": "danh từ · n.",
+  "vn": "quà",
+  "hv": "LỄ VẬT",
+  "use": "Dùng khi nói món quà tặng: 送礼物 · 生日礼物 · 准备了一个小礼物 · 收到礼物. Tặng ai thì 送给 + người + 礼物. Người Trung Quốc tặng quà hay nói khiêm tốn: 一个小礼物，希望你喜欢.",
+  "tip": "礼 (礻 thần, lễ + 乚: lễ dâng lên thần — LỄ) + 物 (牛 bò + 勿: con bò là vật quý nhất nhà nông — VẬT). Nhớ 礻 một chấm, khác 衤 hai chấm. Hán Việt LỄ VẬT, y hệt tiếng Việt.",
+  "ph": [
+   [
+    "小礼物",
+    "xiǎo lǐwù",
+    "món quà nhỏ"
+   ],
+   [
+    "生日礼物",
+    "shēngrì lǐwù",
+    "quà sinh nhật"
+   ]
+  ],
+  "se": [
+   [
+    "我准备了一个小礼物，希望你喜欢！",
+    "Wǒ zhǔnbèi le yí ge xiǎo lǐwù, xīwàng nǐ xǐhuan!",
+    "Chú có chuẩn bị một món quà nhỏ, mong cháu thích!",
+    "小礼物"
+   ],
+   [
+    "你收到过最喜欢的礼物是什么？",
+    "Nǐ shōudào guo zuì xǐhuan de lǐwù shì shénme?",
+    "Món quà em từng nhận mà thích nhất là gì?",
+    "最喜欢的礼物"
+   ]
+  ]
+ },
+ {
+  "hz": "画家",
+  "py": "huàjiā",
+  "pos": "danh từ · n.",
+  "vn": "hoạ sĩ",
+  "hv": "HỌA GIA",
+  "use": "Dùng khi nói người vẽ tranh chuyên nghiệp: 做一名画家 · 有名的画家. Hậu tố -家 chỉ người giỏi một lĩnh vực: 画家 · 音乐家 (nhạc sĩ) · 作家 (nhà văn). Đếm bằng 名 hoặc 位: 一名画家.",
+  "tip": "画 (hình bàn tay cầm bút vạch ruộng 田 trong khung — vẽ) + 家 (mái nhà + 豕 heo: có heo là có nhà; ở đây là người giỏi một nghề). Hán Việt HOẠ GIA, như “nhà văn”, “nhà thơ”.",
+  "ph": [
+   [
+    "做一名画家",
+    "zuò yì míng huàjiā",
+    "làm một hoạ sĩ"
+   ],
+   [
+    "有名的画家",
+    "yǒumíng de huàjiā",
+    "hoạ sĩ nổi tiếng"
+   ]
+  ],
+  "se": [
+   [
+    "对，我想做一名画家。",
+    "Duì, wǒ xiǎng zuò yì míng huàjiā.",
+    "Vâng, cháu muốn làm hoạ sĩ.",
+    "做一名画家"
+   ],
+   [
+    "他是中国很有名的画家。",
+    "Tā shì Zhōngguó hěn yǒumíng de huàjiā.",
+    "Ông ấy là hoạ sĩ rất nổi tiếng của Trung Quốc.",
+    "有名的画家"
+   ]
+  ]
+ },
+ {
+  "hz": "盘子",
+  "py": "pánzi",
+  "pos": "danh từ · n.",
+  "vn": "cái đĩa",
+  "hv": "BÀN TỬ",
+  "use": "Dùng khi nói cái đĩa đựng thức ăn: 一个盘子 · 把盘子拿过来 · 洗盘子. Trong bài, chủ nhà đi lấy đĩa để cắt bánh: 我去把盘子拿过来. ⚠ Bát, chén là 碗 (Bài 2).",
+  "tip": "盘 = 舟 (thuyền) trên 皿 (đồ đựng): đồ đựng dẹt như chiếc thuyền — cái đĩa, mâm. 子 hậu tố đọc nhẹ zi, như 桌子, 杯子, 筷子 — toàn đồ trên bàn ăn. Hán Việt BÀN TỬ.",
+  "ph": [
+   [
+    "把盘子拿过来",
+    "bǎ pánzi ná guòlai",
+    "lấy đĩa qua đây"
+   ],
+   [
+    "洗盘子",
+    "xǐ pánzi",
+    "rửa đĩa"
+   ]
+  ],
+  "se": [
+   [
+    "我去把盘子拿过来，咱们一边吃蛋糕，一边聊天儿吧。",
+    "Wǒ qù bǎ pánzi ná guòlai, zánmen yìbiān chī dàngāo, yìbiān liáotiānr ba.",
+    "Để tôi đi lấy đĩa, mình vừa ăn bánh vừa nói chuyện nhé.",
+    "把盘子拿过来"
+   ],
+   [
+    "吃完饭，我来洗盘子。",
+    "Chī wán fàn, wǒ lái xǐ pánzi.",
+    "Ăn xong, để em rửa đĩa.",
+    "洗盘子"
+   ]
+  ]
+ },
+ {
+  "hz": "聊天儿",
+  "py": "liáotiānr",
+  "pos": "động từ · v.",
+  "vn": "nói chuyện, tán gẫu",
+  "hv": "LIÊU THIÊN NHI",
+  "use": "Dùng khi nói chuyện phiếm, trò chuyện thoải mái: 跟朋友聊天儿 · 和新同学聊天儿 · 一边吃饭一边聊天儿. Từ ly hợp: 聊了一会儿天儿, không nói ✗聊天儿一会儿. Nói chuyện VỚI ai dùng 跟 / 和.",
+  "tip": "聊 = 耳 (tai) + 卯: ghé tai nghe nhau nói — tán gẫu. 天 (trời): nói chuyện trời đất, chuyện không đâu. 儿 là hình đôi chân, làm hậu tố uốn lưỡi r: đọc liáotiānr.",
+  "ph": [
+   [
+    "跟朋友聊天儿",
+    "gēn péngyou liáotiānr",
+    "nói chuyện với bạn"
+   ],
+   [
+    "一边吃饭一边聊天儿",
+    "yìbiān chīfàn yìbiān liáotiānr",
+    "vừa ăn vừa nói chuyện"
+   ]
+  ],
+  "se": [
+   [
+    "今天我看见你和新同学聊天儿了。",
+    "Jīntiān wǒ kànjiàn nǐ hé xīn tóngxué liáotiānr le.",
+    "Hôm nay mình thấy cậu nói chuyện với bạn mới đấy.",
+    "和新同学聊天儿"
+   ],
+   [
+    "我们一边吃饭一边聊天儿，时间过得很快。",
+    "Wǒmen yìbiān chīfàn yìbiān liáotiānr, shíjiān guò de hěn kuài.",
+    "Chúng tôi vừa ăn vừa nói chuyện, thời gian trôi rất nhanh.",
+    "一边吃饭一边聊天儿"
+   ]
+  ]
+ },
+ {
+  "hz": "一边",
+  "py": "yìbiān",
+  "pos": "phó từ · adv.",
+  "vn": "vừa … (vừa …)",
+  "hv": "NHẤT BIÊN",
+  "use": "Dùng khi hai việc làm CÙNG LÚC: 一边 + V1，一边 + V2; rút gọn 边 V1 边 V2 với động từ ngắn: 边走边聊. Cả hai vế đều có 一边, chủ ngữ đứng trước 一边 thứ nhất. ⚠ Hai việc nối tiếp → 先……然后…….",
+  "tip": "一 + 边 (辶 đi + 力: đi dọc theo mép — bên, cạnh): mỗi bên một việc, hai việc cùng chạy. Đọc yìbiān (一 trước thanh 1 đổi thành thanh 4). Hán Việt NHẤT BIÊN.",
+  "ph": [
+   [
+    "一边吃一边聊",
+    "yìbiān chī yìbiān liáo",
+    "vừa ăn vừa nói chuyện"
+   ],
+   [
+    "边走边聊",
+    "biān zǒu biān liáo",
+    "vừa đi vừa nói chuyện"
+   ]
+  ],
+  "se": [
+   [
+    "咱们一边吃蛋糕，一边聊天儿吧。",
+    "Zánmen yìbiān chī dàngāo, yìbiān liáotiānr ba.",
+    "Mình vừa ăn bánh vừa nói chuyện nhé.",
+    "一边吃蛋糕，一边聊天儿"
+   ],
+   [
+    "我喜欢一边跑步，一边听音乐。",
+    "Wǒ xǐhuan yìbiān pǎobù, yìbiān tīng yīnyuè.",
+    "Tôi thích vừa chạy bộ vừa nghe nhạc.",
+    "一边跑步，一边听音乐"
+   ]
+  ]
+ },
+ {
+  "hz": "来自",
+  "py": "láizì",
+  "pos": "động từ · v.",
+  "vn": "đến từ",
+  "hv": "LAI TỰ",
+  "use": "Dùng khi giới thiệu ai / cái gì đến từ đâu, hơi trang trọng: 来自 + nơi: 来自英国的夫妻 · 来自不同的地方. Tự giới thiệu ở hội thảo: 大家好，我来自越南. ⚠ Không thêm 在 hay 从: ✗来自在越南.",
+  "tip": "来 (hình cây lúa mì, mượn nghĩa tới) + 自 (hình cái mũi — chỉ vào mũi nói “mình”; ở đây nghĩa “từ”). Hán Việt LAI TỰ — đảo lại là “tự … lai”: từ đâu đến.",
+  "ph": [
+   [
+    "来自英国",
+    "láizì Yīngguó",
+    "đến từ Anh"
+   ],
+   [
+    "来自不同的地方",
+    "láizì bù tóng de dìfang",
+    "đến từ những nơi khác nhau"
+   ]
+  ],
+  "se": [
+   [
+    "我的新邻居是来自英国的夫妻。",
+    "Wǒ de xīn línjū shì láizì Yīngguó de fūqī.",
+    "Hàng xóm mới của tôi là một cặp vợ chồng đến từ Anh.",
+    "来自英国"
+   ],
+   [
+    "他们来自不同的城市。",
+    "Tāmen láizì bù tóng de chéngshì.",
+    "Họ đến từ những thành phố khác nhau.",
+    "来自不同的城市"
+   ]
+  ]
+ },
+ {
+  "hz": "夫妻",
+  "py": "fūqī",
+  "pos": "danh từ · n.",
+  "vn": "vợ chồng",
+  "hv": "PHU THÊ",
+  "use": "Dùng khi nói hai vợ chồng như một cặp: 一对夫妻 · 英国夫妻 · 他们是夫妻. Đếm bằng 对 (cặp). Trong bài: 来自英国的夫妻. ⚠ Chỉ riêng chồng thì 丈夫, riêng vợ thì 妻子.",
+  "tip": "夫 (大 người + nét ngang là cây trâm cài tóc: người đàn ông trưởng thành; 丈夫) + 妻 (tay cài trâm trên đầu người 女 — người vợ; 妻子). Hán Việt PHU THÊ — “tình nghĩa phu thê”.",
+  "ph": [
+   [
+    "一对夫妻",
+    "yí duì fūqī",
+    "một cặp vợ chồng"
+   ],
+   [
+    "来自英国的夫妻",
+    "láizì Yīngguó de fūqī",
+    "cặp vợ chồng đến từ Anh"
+   ]
+  ],
+  "se": [
+   [
+    "我家旁边住着一对夫妻。",
+    "Wǒ jiā pángbiān zhùzhe yí duì fūqī.",
+    "Cạnh nhà tôi có một cặp vợ chồng ở.",
+    "一对夫妻"
+   ],
+   [
+    "我的新邻居是来自英国的夫妻。",
+    "Wǒ de xīn línjū shì láizì Yīngguó de fūqī.",
+    "Hàng xóm mới của tôi là một cặp vợ chồng đến từ Anh.",
+    "来自英国的夫妻"
+   ]
+  ]
+ },
+ {
+  "hz": "地图",
+  "py": "dìtú",
+  "pos": "danh từ · n.",
+  "vn": "bản đồ",
+  "hv": "ĐỊA ĐỒ",
+  "use": "Dùng khi nói bản đồ: 世界地图 · 中国地图 · 看地图 · 手机上的地图. Đếm bằng 张: 一张地图. Trong bài, nhà hàng xóm có 一张世界地图, mỗi chấm đỏ là nơi họ từng đến.",
+  "tip": "地 (土 đất + 也: mặt đất) + 图 (囗 khung bao lấy 冬 mùa đông — Bài 12: vẽ cả mùa vào một khung — tranh, bản đồ). Hán Việt ĐỊA ĐỒ, y hệt tiếng Việt.",
+  "ph": [
+   [
+    "世界地图",
+    "shìjiè dìtú",
+    "bản đồ thế giới"
+   ],
+   [
+    "看地图",
+    "kàn dìtú",
+    "xem bản đồ"
+   ]
+  ],
+  "se": [
+   [
+    "他家有一张世界地图，上面每一个红点都是他们去过的地方。",
+    "Tā jiā yǒu yì zhāng shìjiè dìtú, shàngmiàn měi yí ge hóng diǎn dōu shì tāmen qù guo de dìfang.",
+    "Nhà họ có một tấm bản đồ thế giới, mỗi chấm đỏ trên đó là một nơi họ từng đến.",
+    "世界地图"
+   ],
+   [
+    "我不认识路，你帮我看看地图。",
+    "Wǒ bú rènshi lù, nǐ bāng wǒ kànkan dìtú.",
+    "Tôi không biết đường, bạn xem bản đồ giúp tôi với.",
+    "看看地图"
+   ]
+  ]
+ },
+ {
+  "hz": "点",
+  "py": "diǎn",
+  "pos": "danh từ · n.",
+  "vn": "chấm, điểm",
+  "hv": "ĐIỂM",
+  "use": "Ở bài này 点 là danh từ: cái chấm, điểm nhỏ: 红点 · 每一个点 · 地图上的点. Em đã biết 点 với nghĩa khác: 一点儿 (một chút), 三点 (3 giờ), 点菜 (gọi món) — cùng một chữ, đoán nghĩa theo câu.",
+  "tip": "占 + 灬 (bốn chấm lửa): đốm lửa nhỏ — chấm, điểm. Em đã gặp trong 地点 (Bài 11, địa điểm), nay là chấm đỏ trên bản đồ. Một chấm = một điểm: 几点 là điểm giờ trên đồng hồ.",
+  "ph": [
+   [
+    "每一个红点",
+    "měi yí ge hóng diǎn",
+    "mỗi một chấm đỏ"
+   ],
+   [
+    "地图上的点",
+    "dìtú shang de diǎn",
+    "các chấm trên bản đồ"
+   ]
+  ],
+  "se": [
+   [
+    "上面每一个红点都是他们去过的地方。",
+    "Shàngmiàn měi yí ge hóng diǎn dōu shì tāmen qù guo de dìfang.",
+    "Mỗi chấm đỏ trên đó là một nơi họ từng đến.",
+    "每一个红点"
+   ],
+   [
+    "地图上的点是我们明天要去的地方。",
+    "Dìtú shang de diǎn shì wǒmen míngtiān yào qù de dìfang.",
+    "Những chấm trên bản đồ là nơi ngày mai chúng ta sẽ đến.",
+    "地图上的点"
+   ]
+  ]
+ },
+ {
+  "hz": "东方",
+  "py": "dōngfāng",
+  "pos": "danh từ · n.",
+  "vn": "phương Đông",
+  "hv": "ĐÔNG PHƯƠNG",
+  "use": "Dùng khi nói phương Đông theo nghĩa văn hoá, địa lý lớn (châu Á): 东方的文化 · 东方人 · 东方和西方. ⚠ Vị trí phía đông của một chỗ cụ thể → 东边: ✗我家在学校的东方 → 东边.",
+  "tip": "东 (mặt trời mọc sau cây — phía Đông) + 方 (hai thuyền buộc song song — phương hướng). Cùng khuôn với 南方, 北方, nhưng 东方 hay mang nghĩa văn hoá Á Đông. Hán Việt ĐÔNG PHƯƠNG.",
+  "ph": [
+   [
+    "东方的文化",
+    "dōngfāng de wénhuà",
+    "văn hoá phương Đông"
+   ],
+   [
+    "东方人",
+    "dōngfāng rén",
+    "người phương Đông"
+   ]
+  ],
+  "se": [
+   [
+    "他们感到东方的文化很特别，就开始学习中文。",
+    "Tāmen gǎndào dōngfāng de wénhuà hěn tèbié, jiù kāishǐ xuéxí Zhōngwén.",
+    "Họ thấy văn hoá phương Đông rất đặc biệt nên bắt đầu học tiếng Trung.",
+    "东方的文化"
+   ],
+   [
+    "很多东方人喜欢喝茶。",
+    "Hěn duō dōngfāng rén xǐhuan hē chá.",
+    "Nhiều người phương Đông thích uống trà.",
+    "东方人"
+   ]
+  ]
+ },
+ {
+  "hz": "文化",
+  "py": "wénhuà",
+  "pos": "danh từ · n.",
+  "vn": "văn hoá",
+  "hv": "VĂN HOÁ",
+  "use": "Dùng khi nói phong tục, nghệ thuật, lối sống của một dân tộc: 中国文化 · 东方文化 · 文化不同 · 对……文化感兴趣. Bạn hỏi vì sao em học tiếng Trung: 我对中国文化很感兴趣.",
+  "tip": "文 (hình người có hoa văn xăm trên ngực — hoa văn, chữ, văn) + 化 (亻 + 匕 người lộn ngược: người đổi dáng — hoá). Hán Việt VĂN HOÁ, giống hệt tiếng Việt.",
+  "ph": [
+   [
+    "东方的文化",
+    "dōngfāng de wénhuà",
+    "văn hoá phương Đông"
+   ],
+   [
+    "中国文化",
+    "Zhōngguó wénhuà",
+    "văn hoá Trung Quốc"
+   ]
+  ],
+  "se": [
+   [
+    "他们感到东方的文化很特别。",
+    "Tāmen gǎndào dōngfāng de wénhuà hěn tèbié.",
+    "Họ thấy văn hoá phương Đông rất đặc biệt.",
+    "东方的文化"
+   ],
+   [
+    "我对中国文化很感兴趣。",
+    "Wǒ duì Zhōngguó wénhuà hěn gǎn xìngqù.",
+    "Tôi rất hứng thú với văn hoá Trung Quốc.",
+    "中国文化"
+   ]
+  ]
+ },
+ {
+  "hz": "感到",
+  "py": "gǎndào",
+  "pos": "động từ · v.",
+  "vn": "cảm thấy",
+  "hv": "CẢM ĐÁO",
+  "use": "Dùng khi nói cảm xúc / cảm giác của mình: 感到 + Adj: 感到很高兴 · 感到很特别 · 感到不习惯 · 感到累. ⚠ Nhận xét, đánh giá → 觉得: ✗我感到这件衣服很好看 → 我觉得……. 感到 nói lòng mình, 觉得 nói ý kiến.",
+  "tip": "感 (咸 + 心: mọi thứ chạm tới lòng — cảm) + 到 (至 tới nơi + 刂: đến). Cảm xúc “tới” trong lòng. Hán Việt CẢM ĐÁO. Cùng kiểu với 遇到, 直到: V + 到 là đã chạm tới.",
+  "ph": [
+   [
+    "感到很特别",
+    "gǎndào hěn tèbié",
+    "cảm thấy rất đặc biệt"
+   ],
+   [
+    "感到不习惯",
+    "gǎndào bù xíguàn",
+    "cảm thấy không quen"
+   ]
+  ],
+  "se": [
+   [
+    "他们感到东方的文化很特别。",
+    "Tāmen gǎndào dōngfāng de wénhuà hěn tèbié.",
+    "Họ thấy văn hoá phương Đông rất đặc biệt.",
+    "感到东方的文化很特别"
+   ],
+   [
+    "刚来的时候感到有点儿不习惯。",
+    "Gāng lái de shíhou gǎndào yǒudiǎnr bù xíguàn.",
+    "Lúc mới đến thấy hơi không quen.",
+    "感到有点儿不习惯"
+   ]
+  ]
+ },
+ {
+  "hz": "直到",
+  "py": "zhídào",
+  "pos": "động từ · v.",
+  "vn": "mãi cho đến, tận",
+  "hv": "TRỰC ĐÁO",
+  "use": "Dùng khi việc kéo dài tận một thời điểm (thường muộn): 直到 + thời điểm + 才 + V: 直到十二点才回家; 直到现在 (mãi đến giờ). ⚠ 直到 đứng TRƯỚC thời gian: ✗十二点直到; đến một NƠI thì dùng 到.",
+  "tip": "直 (十 + 目 mắt + nét gập: mắt nhìn thẳng — thẳng) + 到 (至 + 刂: tới nơi): thẳng một mạch tới tận lúc đó. Hán Việt TRỰC ĐÁO. Nhớ bộ đôi 直到……才.",
+  "ph": [
+   [
+    "直到十二点多",
+    "zhídào shí'èr diǎn duō",
+    "mãi đến hơn mười hai giờ"
+   ],
+   [
+    "直到现在",
+    "zhídào xiànzài",
+    "mãi đến bây giờ"
+   ]
+  ],
+  "se": [
+   [
+    "那天我跟他们一边喝红茶，一边聊天儿，直到十二点多才回家。",
+    "Nà tiān wǒ gēn tāmen yìbiān hē hóngchá, yìbiān liáotiānr, zhídào shí'èr diǎn duō cái huí jiā.",
+    "Hôm đó tôi vừa uống trà vừa trò chuyện với họ, mãi hơn mười hai giờ mới về.",
+    "直到十二点多才回家"
+   ],
+   [
+    "我们聊得太开心了，直到十一点才回家。",
+    "Wǒmen liáo de tài kāixīn le, zhídào shíyī diǎn cái huí jiā.",
+    "Chúng tôi nói chuyện vui quá, mãi mười một giờ mới về nhà.",
+    "直到十一点才回家"
+   ]
+  ]
+ },
+ {
+  "hz": "英国",
+  "py": "Yīngguó",
+  "pos": "danh từ riêng",
+  "vn": "nước Anh",
+  "hv": "ANH QUỐC",
+  "use": "Tên nước Anh: 英国人 · 英国的红茶 · 去英国旅游 · 来自英国. Pinyin viết hoa: Yīngguó. Trong bài, hàng xóm mới của Vương Nhất Tuyết là 来自英国的夫妻, đãi khách bằng 英国的红茶.",
+  "tip": "英 (anh) + 国 (nước): ANH QUỐC. 英 em đã biết trong 英语 (tiếng Anh): nước nói 英语 đầu tiên chính là 英国. 国 còn trong 中国, 美国.",
+  "ph": [
+   [
+    "来自英国",
+    "láizì Yīngguó",
+    "đến từ Anh"
+   ],
+   [
+    "英国的红茶",
+    "Yīngguó de hóngchá",
+    "trà đen kiểu Anh"
+   ]
+  ],
+  "se": [
+   [
+    "我的新邻居是来自英国的夫妻。",
+    "Wǒ de xīn línjū shì láizì Yīngguó de fūqī.",
+    "Hàng xóm mới của tôi là một cặp vợ chồng đến từ Anh.",
+    "来自英国"
+   ],
+   [
+    "他们还准备了英国的红茶。",
+    "Tāmen hái zhǔnbèi le Yīngguó de hóngchá.",
+    "Họ còn chuẩn bị cả trà đen kiểu Anh.",
+    "英国的红茶"
+   ]
+  ]
+ }
+]
